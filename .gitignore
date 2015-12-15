@@ -97,3 +97,6 @@ wp-content/mysql.sql
 *.wmv
 *.avi
 wp-content/plugins
+sftp-config.json
+wp-content/themes/twentyfourteen
+wp-content/themes/_mangrove-wp-bootstrap-master
