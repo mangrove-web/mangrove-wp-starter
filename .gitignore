@@ -6,8 +6,23 @@
 *.swp
 Thumbs.db
 
+# mangrove additions
+sftp-config.json
+searchreplacedb2.php
+searchreplace
+~sample-wp-config-for-local.php
+local-config.php
+searchreplacedb2.php
+wp-config-live.php
+wp-config-local.php
+local-config.php
+wp-config_sample-for-local.php
+node_modules/
+
+
 # wordpress specific
 wp-config.php
+wp-content/plugins/*
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
@@ -29,6 +44,8 @@ wp-content/mu-plugins/wpengine-common
 wp-content/mysql.sql
 
 # wp core (as of 3.4.1)
+/wp-admin/*
+/wp-includes/*
 /db-config.php
 /index.php
 /license.txt
@@ -59,6 +76,11 @@ wp-content/mysql.sql
 /wp-includes
 /wp-content/index.php
 /wp-content/themes/twentyten
+/wp-content/themes/twentyeleven
+/wp-content/themes/twentytwelve
+/wp-content/themes/twentythirteen
+/wp-content/themes/twentyfourteen
+/wp-content/themes/twentyfifteen
 /wp-content/themes/index.php
 /wp-content/plugins/index.php
 
@@ -96,7 +118,3 @@ wp-content/mysql.sql
 *.asf
 *.wmv
 *.avi
-wp-content/plugins
-sftp-config.json
-wp-content/themes/twentyfourteen
-wp-content/themes/_mangrove-wp-bootstrap-master
