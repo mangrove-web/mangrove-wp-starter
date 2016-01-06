@@ -1,0 +1,24 @@
+.navbar {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.navbar {
+  width: 100%;
+  clear: both;
+  display: flex;
+  ul {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    font-size: $font-size-base;
+    @extend .source-sans-custom;
+    li {
+      padding: 1em;
+      a {
+      }
+    }
+  }
+}

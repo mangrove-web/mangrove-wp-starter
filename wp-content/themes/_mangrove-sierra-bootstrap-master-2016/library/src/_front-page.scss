@@ -1,0 +1,77 @@
+.home {
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+  .contain {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section {
+    padding-bottom: 60px; // temp
+    @extend .contain;
+  }
+  header.main {
+    background-position: 50% top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .page-header {
+    width: 100%;
+    align-self: flex-start;
+    h2 {
+      text-align: center;
+      color: $white;
+      padding: 15% 15%;
+      a {
+        color: #fff;
+        border-bottom: 1px solid $mg-yellow;
+        &:hover {
+          color: $mg-teal;
+          border-bottom: 1px solid transparent;
+          @extend .transition-default;
+        }
+      }
+    }
+  }
+  .navbar-header {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    top: 0;
+  }
+
+  .navbar {
+    align-self: flex-end;
+    ul {
+      li {
+        a {
+          color: #fff;
+          &:hover {
+            color: $mg-teal;
+            @extend .transition-default;
+          }
+        }
+      }
+    }
+  }
+  .subhead {
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+  .featured-work { // see grid-hovers.scss
+    max-width: 800px;
+    margin: 0 auto;
+    li {
+      margin: 0;
+      padding: 0;
+
+    }
+  }
+}

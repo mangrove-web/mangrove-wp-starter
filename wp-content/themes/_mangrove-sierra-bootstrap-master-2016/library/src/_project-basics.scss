@@ -1,0 +1,38 @@
+body {
+}
+h1, h2, h3, h4, h5 {
+  font-family: $headerfont;
+  color: $brand-primary;
+}
+h1 {
+  font-size: $font-size-xlarge;
+}
+h2 {
+  font-size: $font-size-large;
+}
+h3 {
+  font-size: $font-size-medium;
+}
+h4 {
+  font-size: $font-size-base;
+}
+p, section, article {
+  font-size: $font-size-base;
+}
+
+.contain {
+  max-width: $container-large-desktop;
+  @media (min-width: $screen-lg-min) {
+    margin: 0 auto;
+  }
+}
+
+.transition-default {
+  transition: ease all .5s;
+}
+.source-sans-custom {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
