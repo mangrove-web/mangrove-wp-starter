@@ -1,0 +1,90 @@
+body {
+}
+section.row {
+    padding-bottom: $space*5; // temp
+  }
+h1, h3 {
+  font-family: $headerfont;
+  color: $brand-primary;
+}
+h1 {
+  font-size: $font-size-xlarge;
+}
+h2 {
+  font-size: $font-size-medium;
+  text-transform: uppercase;
+}
+h3 {
+  font-size: $font-size-base-medium;
+  color: $brand-secondary;
+  margin-bottom: 1em;
+}
+h4 {
+  font-size: $font-size-base-bump;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+h5 {
+  font-size: $font-size-base;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+  margin-bottom: .5em;
+}
+
+small {
+  font-size: $font-size-base*.75;
+}
+p, section, article {
+  font-size: $font-size-base;
+}
+
+$space: 20px;
+
+.contain {
+  max-width: $container-large-desktop;
+  margin: 0 auto;
+  padding-left: $space*2;
+  padding-right: $space*2;
+  @media (max-width: $grid-float-breakpoint) {
+
+  }
+}
+
+.contain-text {
+  max-width: 1024px;
+  padding: 0 $space*2;
+  margin: 0 auto;
+}
+
+.transition-default {
+  transition: ease all .5s;
+}
+
+#content {
+  ul {
+    list-style: disc;
+    margin-left: 2em;
+    li {
+      list-style: disc;
+    }
+  }
+}
+
+#content ul.nostyle, ul.nostyle {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    list-style: none;
+  }
+}
+
+.post_content {
+  h2 {
+    margin-bottom: $space/2;
+  }
+  h4 {
+    margin-bottom: 1em;
+  }
+}

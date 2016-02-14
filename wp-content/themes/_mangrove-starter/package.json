@@ -1,0 +1,31 @@
+{
+  "name": "mangrove-web",
+  "version": "1.0.0",
+  "description": "WordPress theme by Mangrove Web Development",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-minify-css": "1.0.0",
+    "gulp-notify": "*",
+    "gulp-plumber": "*"
+    "gulp-plumber": "1.0.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "node-notifier": "^4.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "author": "Mangrove Web",
+  "license": "Private",
+  "homepage": "https://mangrove-web.com"
+}
