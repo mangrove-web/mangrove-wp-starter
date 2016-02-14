@@ -1,0 +1,23 @@
+{
+  "name": "mangrove-wordpress",
+  "version": "1.0.0",
+  "description": "npm dependencies for the theme",
+  "author": "Mangrove Web",
+  "private": true,
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-less": "^3.0.5",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
