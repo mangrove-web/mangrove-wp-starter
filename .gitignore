@@ -9,7 +9,7 @@
 !/wp-content/themes
 /wp-content/themes/*
 !/wp-content/themes/_mangrove-wp-bootstrap-master-3.0
-!/wp-content/themes/mangrove
+!/wp-content/themes/_mangrove-starter
 
 
 
@@ -30,81 +30,8 @@ Thumbs.db
 *.sql
 *.bak
 *.swp
-<<<<<<< HEAD
-Thumbs.db
-
-# mangrove additions
-sftp-config.json
-searchreplacedb2.php
-searchreplace
-~sample-wp-config-for-local.php
-local-config.php
-searchreplacedb2.php
-wp-config-live.php
-wp-config-local.php
-local-config.php
-wp-config_sample-for-local.php
-node_modules/
 
 
-# wordpress specific
-wp-config.php
-wp-content/plugins/*
-wp-content/uploads/
-wp-content/blogs.dir/
-wp-content/upgrade/*
-wp-content/backup-db/*
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/cache/*
-wp-content/cache/supercache/*
-=======
->>>>>>> a658de750db4d6ba756fc46a0d0f023e685ab1c1
-
-
-<<<<<<< HEAD
-# wp core (as of 3.4.1)
-/wp-admin/*
-/wp-includes/*
-/db-config.php
-/index.php
-/license.txt
-/readme.html
-/wp-activate.php
-/wp-app.php
-/wp-atom.php
-/wp-blog-header.php
-/wp-comments-post.php
-/wp-commentsrss2.php
-/wp-config-sample.php
-/wp-cron.php
-/wp-feed.php
-/wp-links-opml.php
-/wp-load.php
-/wp-login.php
-/wp-mail.php
-/wp-rdf.php
-/wp-rss.php
-/wp-rss2.php
-/wp-pass.php
-/wp-register.php
-/wp-settings.php
-/wp-signup.php
-/wp-trackback.php
-/xmlrpc.php
-/wp-admin
-/wp-includes
-/wp-content/index.php
-/wp-content/themes/twentyten
-/wp-content/themes/twentyeleven
-/wp-content/themes/twentytwelve
-/wp-content/themes/twentythirteen
-/wp-content/themes/twentyfourteen
-/wp-content/themes/twentyfifteen
-/wp-content/themes/index.php
-/wp-content/plugins/index.php
-=======
->>>>>>> a658de750db4d6ba756fc46a0d0f023e685ab1c1
 
 # large/disallowed file types
 # a CDN should be used for these
@@ -139,8 +66,4 @@ wp-content/cache/supercache/*
 *.asx
 *.asf
 *.wmv
-<<<<<<< HEAD
 *.avi
-=======
-*.avi
->>>>>>> a658de750db4d6ba756fc46a0d0f023e685ab1c1
