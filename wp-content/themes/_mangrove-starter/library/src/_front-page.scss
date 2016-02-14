@@ -42,12 +42,10 @@
       }
       a {
         color: #fff;
-        border-bottom: 1px solid $mg-yellow;
         &:hover {
           color: $mg-teal;
           border-bottom: 1px solid transparent;
           @extend .transition-default;
-          //border-bottom: 1px solid $mg-yellow;
         }
       }
     }
@@ -93,7 +91,7 @@
     }
 
   }
-  .featured-work { // see grid-hovers.scss
+  .featured-work { // see grid-basics.scss
     margin: 0 auto;
     figure {
     h3 {
@@ -127,141 +125,6 @@
       p {
         margin-bottom: 0;
       }
-    }
-  }
-  .wrap-viewall {
-    padding-top: $space*2;
-    clear: both;
-  }
-}
-#main section.testimonials {
-  background-color: $mg-gray-med;
-  color: #fff;
-  padding-top: $space*3;
-  padding-bottom: $space*5;
-  article {
-    margin-bottom: $space*3;
-    h5 a {
-      color: #fff;
-    }
-  }
-  blockquote, blockquote p, blockquote p.lead {
-    font-size: $font-size-base-medium;
-    margin-bottom: 1em;
-    strong {
-      color: $mg-teal;
-      opacity: .75;
-      font-weight: normal;
-    }
-
-  }
-}
-#main section.services {
-  background-color: $mg-gray-med;
-  padding-top: $space*3;
-  padding-bottom: $space*3;
-  margin-top: $space*3;
-  // margin-bottom: $space*3;
-  color: #fff;
-  text-align: center;
-  p {
-    font-size: $font-size-base-bump;
-  }
-  h2, h3 {
-    color: #fff;
-  }
-  h2 {
-    @extend.header-secondary;
-    font-size: $font-size-base-bump;
-    margin-top: .5em;
-  }
-  h3 {
-    @extend.header-compact;
-    margin-bottom: 1em;
-  }
-  h4 {
-    font-family: 'futura_ltbook';
-    text-transform: none;
-    font-weight: 300;
-    margin-bottom: 1em;
-  }
-
-  .systems {
-    max-width: 600px;
-    margin: 0 auto;
-    li {
-      text-align: center;
-      &:hover {
-        opacity: .6;
-        transition: .5s ease all;
-      }
-      img {
-        max-width: 60px;
-      }
-      h3 {
-        color: #fff;
-        margin-top: 1em;
-      }
-    }
-  }
-  .wrap-systems {
-    margin: $space*2 0;
-  }
-  .other-services {
-    margin: $space*3 0 0;
-    text-align: center;
-    ul {
-      li {
-        margin: 1em .5em;
-        font-size: $font-size-base-bump;
-      }
-    }
-  }
-}
-
-#main section.blog {
-  padding: $space*4 0 $space*6;
-  //background-attachment: fixed;
-}
-.grid-blog {
-  .grid figure {
-    background: $mg-teal;
-    padding-bottom: 70%;
-    overflow: hidden;
-    img {
-      opacity: .6;
-    }
-  }
-  li {
-    margin-bottom: $grid-gutter-width;
-  }
-}
-
-.home {
-  .grid-blog {
-    .grid figure {
-      background: $mg-teal;
-
-    }
-  }
-}
-#main section.cta {
-  text-align: center;
-  padding-bottom: 0;
-
-  .content {
-    background-color: $mg-teal;
-    color: #fff;
-    margin-top: -$space*2;
-    padding-top: $space*2;
-    padding-bottom: $space*2;
-
-    padding-bottom: 70px;
-    background-position: bottom ;
-    h3 {
-      color: #fff;
-      font-weight: 300;
-
     }
   }
 }
