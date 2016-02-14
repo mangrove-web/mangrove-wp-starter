@@ -59,7 +59,7 @@
 						</button>
 
 						<a class="navbar-brand <?php
-		if (is_front_page()) {?>animated wow fadeIn<?php } ?>" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/images/logo.png" /></a>
+		if (is_front_page()) {?>animated wow fadeIn<?php } ?>" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><h1><?php bloginfo('name');?></h1><?php /*<img src="<?php bloginfo('template_directory');?>/images/logo.png" /> */?></a>
 					</div>
 
 		<?php
