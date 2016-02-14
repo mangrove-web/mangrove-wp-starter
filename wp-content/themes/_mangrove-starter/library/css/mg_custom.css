@@ -5965,13 +5965,13 @@ section.space {
   color: white;
   border: 1px solid; }
   .button-ghost:hover {
-    color: #f29f33;
+    color: #3c5499;
     background-color: transparent; }
 
 .button-ghost-teal {
   color: #1abc9c; }
   .button-ghost-teal:hover {
-    color: #f29f33;
+    color: #3c5499;
     background-color: transparent; }
 
 .button-ghost-inverse {

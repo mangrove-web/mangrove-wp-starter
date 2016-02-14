@@ -89,14 +89,14 @@ header.main {
   color: white;
   border: 1px solid;
   &:hover {
-    color: $mg-yellow;
-     background-color: transparent;
+    color: $brand-secondary;
+    background-color: transparent;
   }
 }
 .button-ghost-teal {
   color: $mg-teal;
   &:hover {
-    color: $mg-yellow;
+    color: $brand-secondary;
     background-color: transparent;
   }
 }
