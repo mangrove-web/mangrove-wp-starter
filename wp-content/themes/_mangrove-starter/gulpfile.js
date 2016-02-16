@@ -1,47 +1,38 @@
-var gulp         = require('gulp'),
-    plumber      = require('gulp-plumber'),
-    rename       = require('gulp-rename'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss    = require('gulp-minify-css'),
-    less         = require('gulp-sass'),
-    notify       = require('gulp-notify'),
-    notifier     = require('node-notifier'),
-    sourcemaps   = require('gulp-sourcemaps');
+var gulp       = require( 'gulp'              );
+var sass       = require( 'gulp-sass'         );
+var sourcemaps = require( 'gulp-sourcemaps'   );
+var autoprefix = require( 'gulp-autoprefixer' );
+var notify     = require( 'gulp-notify'       );
+var plumber    = require( 'gulp-plumber'      );
+var cssnano    = require( 'gulp-cssnano'      );
 
 function onError( error ){
-    notify.onError( {
-        title:    "Gulp",
-        subtitle: "Failure!",
-        message:  "Error: <%= error.message %>",
-        sound:    "Beep"
-  } )( error );
-    this.emit('end');
+	notify.onError( {
+		title:    "Gulp",
+		subtitle: "Failure!",
+		message:  "Error: <%= error.message %>",
+		sound:    "Beep"
+	} )( error );
+	this.emit('end');
 }
 
-gulp.task('styles', function(){
-  gulp.src(['library/src/mg_custom.scss'])
-    .pipe( plumber( { errorHandler: onError } ) )
-    .pipe( sourcemaps.init() )
-    .pipe( less() )
-    .pipe( autoprefixer('last 2 versions') )
-    .pipe( gulp.dest('library/css/') )
-    .pipe( rename({suffix: '.min'}) )
-    .pipe( minifycss() )
-    .pipe( sourcemaps.write() )
-    .pipe( gulp.dest('library/css/') )
-    .pipe( notify({
-            title: "Gulp",
-            subtitle: 'Success',
-            message: "gulp complete"
-        }) )
-
+gulp.task('styles', function() {
+	gulp.src( 'library/styles/sass/*' )
+		.pipe( plumber( { errorHandler: onError } ) )
+		.pipe( sourcemaps.init()                    )
+		.pipe( sass()                               )
+		.pipe( autoprefix()                         )
+		.pipe( cssnano()                            )
+		.pipe( sourcemaps.write( '../maps/' )       )
+		.pipe( gulp.dest('library/styles/css')      )
+		.pipe( notify({
+			title: "Gulp",
+			subtitle: 'Success',
+			message: "gulp complete"
+		}) )
 });
 
-
-gulp.task('default', function(){
-  gulp.watch('library/src/**/*.{sass,scss}',['styles']);
-  notifier.notify( {
-    title: 'Gulp Ready',
-    message: 'Watching files'
-  } );
+//Watch task
+gulp.task('default',function() {
+	gulp.watch('library/styles/sass/**/*.{sass,scss}',['styles']);
 });
