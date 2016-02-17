@@ -1,4 +1,4 @@
-			<footer role="">
+			<footer>
 
 				<article class="inner-footer contain">
 						<div class="col attribution"><p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p></div>

@@ -5,6 +5,7 @@ var autoprefix = require( 'gulp-autoprefixer' );
 var notify     = require( 'gulp-notify'       );
 var plumber    = require( 'gulp-plumber'      );
 var cssnano    = require( 'gulp-cssnano'      );
+var uglify     = require( 'gulp-uglify'       );
 
 function onError( error ){
 	notify.onError( {
@@ -17,7 +18,7 @@ function onError( error ){
 }
 
 gulp.task('styles', function() {
-	gulp.src( 'library/styles/sass/*' )
+	return gulp.src( 'library/styles/sass/*' )
 		.pipe( plumber( { errorHandler: onError } ) )
 		.pipe( sourcemaps.init()                    )
 		.pipe( sass()                               )
@@ -26,13 +27,28 @@ gulp.task('styles', function() {
 		.pipe( sourcemaps.write( '../maps/' )       )
 		.pipe( gulp.dest('library/styles/css')      )
 		.pipe( notify({
-			title: "Gulp",
+			title: "Gulp SASS",
 			subtitle: 'Success',
-			message: "gulp complete"
+			message: "SASS Compiled"
 		}) )
 });
 
+gulp.task( 'javascript', function(){
+	return gulp.src( 'library/js/src/*' )
+		.pipe( plumber( { errorHandler: onError } ) )
+		.pipe( sourcemaps.init()                    )
+		.pipe( uglify()                             )
+		.pipe( sourcemaps.write( '../maps' )        )
+		.pipe( gulp.dest( 'library/js/min' )        )
+		.pipe( notify( {
+			title: "Gulp JavaScript",
+			subtitle: "Success",
+			message: "JavaScript minified"
+		}))
+})
+
 //Watch task
 gulp.task('default',function() {
-	gulp.watch('library/styles/sass/**/*.{sass,scss}',['styles']);
+	gulp.watch( 'library/styles/sass/**/*.{sass,scss}', ['styles']     );
+	gulp.watch( 'library/js/src/**/*.js'              , ['javascript'] );
 });
