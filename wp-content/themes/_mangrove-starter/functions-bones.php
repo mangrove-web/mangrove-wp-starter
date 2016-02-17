@@ -2,10 +2,6 @@
 /*
 Author: Eddie Machado
 URL: htp://themble.com/bones/
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
 */
 
 // Get Bones Core Up & Running!
@@ -19,105 +15,6 @@ add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
 
 // Set content width
 if ( ! isset( $content_width ) ) $content_width = 580;
-
-/************* THUMBNAIL SIZE OPTIONS *************/
-
-// Thumbnail sizes
-add_image_size( 'slider-lg', 1600, 1100, true );
-add_image_size( 'banner-lg', 1400, 700, true );
-add_image_size( 'mangrove-xlarge', 1600, 9999, false);
-add_image_size( 'mangrove-thumb-sq', 350, 350, true);
-add_image_size( 'mangrove-thumb', 500, 380, true);
-//add_image_size( 'mangrove-thumb', 530, 300, true );
-
-
-/*
-to add more sizes, simply copy a line from above
-and change the dimensions & name. As long as you
-upload a "featured image" as large as the biggest
-set width or height, all the other sizes will be
-auto-cropped.
-
-To call a different size, simply change the text
-inside the thumbnail function.
-
-For example, to call the 300 x 300 sized image,
-we would use the function:
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-for the 600 x 100 image:
-<?php the_post_thumbnail( 'bones-thumb-600' ); ?>
-
-You can change the names and dimensions to whatever
-you like. Enjoy!
-*/
-
-/************* ACTIVE SIDEBARS ********************/
-
-// Sidebars & Widgetizes Areas
-function wp_bootstrap_register_sidebars() {
-		register_sidebar(array(
-			'id' => 'sidebar1',
-			'name' => 'Main Sidebar',
-			'description' => 'Used on every page BUT the homepage page template.',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widgettitle">',
-			'after_title' => '</h4>',
-		));
-
-		register_sidebar(array(
-			'id' => 'sidebar2',
-			'name' => 'Homepage Sidebar',
-			'description' => 'Used only on the homepage page template.',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widgettitle">',
-			'after_title' => '</h4>',
-		));
-
-		register_sidebar(array(
-			'id' => 'footer1',
-			'name' => 'Footer 1',
-			'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widgettitle">',
-			'after_title' => '</h4>',
-		));
-
-		register_sidebar(array(
-			'id' => 'footer2',
-			'name' => 'Footer 2',
-			'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widgettitle">',
-			'after_title' => '</h4>',
-		));
-
-		register_sidebar(array(
-			'id' => 'footer3',
-			'name' => 'Footer 3',
-			'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widgettitle">',
-			'after_title' => '</h4>',
-		));
-
-
-		/*
-		to add more sidebars or widgetized areas, just copy
-		and edit the above sidebar code. In order to call
-		your new sidebar just use the following code:
-
-		Just change the name to whatever your new
-		sidebar's id is, for example:
-
-		To call the sidebar in your template, you can just copy
-		the sidebar.php file and rename it to your sidebar's name.
-		So using the above example, it would be:
-		sidebar-sidebar2.php
-
-		*/
-} // don't remove this bracket!
 
 /************* COMMENT LAYOUT *********************/
 
