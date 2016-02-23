@@ -6,7 +6,7 @@ add_action( 'wp_enqueue_scripts', 'Mangrove\register_styles'  );
 add_action( 'wp_enqueue_scripts', 'Mangrove\register_scripts' );
 add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_styles'   );
 // add_action( 'after_setup_theme', 'Mangrove\add_image_sizes'   );
-// add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'  );
+add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'  );
 // add_action( 'widgets_init', 'Mangrove\register_sidebars'      );
 
 /* Functions */
@@ -81,6 +81,7 @@ function register_scripts(){
 	wp_register_script( 'flexslider', '//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/jquery.flexslider.min.js' );
 
 	$js_dir = get_template_directory_uri() . '/library/js/min';
+	wp_register_script( 'modernizr', $js_dir . '/modernizr.js', array(), 0, true );
 	wp_register_script(
 		$handle       = 'mangrove-custom',
 		$source       = $js_dir . '/mangrove-custom.js',

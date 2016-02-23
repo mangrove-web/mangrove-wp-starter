@@ -1,5 +1,5 @@
 ;(function ( $, window, document, undefined ) {
-  'use strict'
+	'use strict'
 	// your code here
-  // you can use $ instead of jQuery
+	// you can use $ instead of jQuery
 })( jQuery, window, document );
