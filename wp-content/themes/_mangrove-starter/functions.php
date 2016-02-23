@@ -5,7 +5,7 @@ namespace Mangrove;
 add_action( 'wp_enqueue_scripts', 'Mangrove\register_styles'  );
 add_action( 'wp_enqueue_scripts', 'Mangrove\register_scripts' );
 add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_styles'   );
-// add_action( 'after_setup_theme', 'Mangrove\add_image_sizes'   );
+add_action( 'after_setup_theme', 'Mangrove\add_image_sizes'   );
 add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'  );
 // add_action( 'widgets_init', 'Mangrove\register_sidebars'      );
 
