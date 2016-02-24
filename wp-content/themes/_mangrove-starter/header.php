@@ -58,8 +58,13 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand <?php
-		if (is_front_page()) {?>animated wow fadeIn<?php } ?>" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><h1><?php bloginfo('name');?></h1><?php /*<img src="<?php bloginfo('template_directory');?>/images/logo.png" /> */?></a>
+						<a
+							class="navbar-brand <?php if (is_front_page()) {?>animated wow fadeIn<?php } ?>"
+							title="<?php echo get_bloginfo('description'); ?>"
+							href="<?php echo home_url(); ?>"
+							>
+							<h1><?php bloginfo('name');?></h1>
+						</a>
 					</div>
 
 		<?php
@@ -86,8 +91,7 @@
 				</div> <!-- end .container -->
 			</div> <!-- end .navbar -->
 
-<?php //if (!is_front_page()) { ?><div class="overlay <?php if (is_front_page()) {
-	echo 'animated wow fadeIn" data-wow-duration="2s" data-wow-delay="1s-'; } else { } ?>" style="background-color: <?php the_field('banner_highlight_rgba');?>"></div>
+<div class="overlay <?php if (is_front_page()) { echo 'animated wow fadeIn" data-wow-duration="2s" data-wow-delay="1s-'; } ?>" style="background-color: <?php the_field('banner_highlight_rgba');?>"></div>
 
 
 
