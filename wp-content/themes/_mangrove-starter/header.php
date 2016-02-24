@@ -63,23 +63,25 @@
 					</div>
 
 		<?php
-		if (is_front_page()) {?>
-
+		if ( is_front_page() ) { ?>
 			<div class="banner">
 				<div class="page-header animated wow fadeInUp" data-wow-duration="1s" data-wow-delay="0">
 					<h2><?php bloginfo('description');?></h2>
-				</div>
-			<?php } ?>
-
-
-
-					<div class="collapse navbar-collapse navbar-responsive-collapse <?php if (is_front_page()) { echo 'animated wow fadeIn'; }?>" data-wow-duration="1s" data-wow-delay=".5s">
-						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-					</div>
-
-		<?php if (is_front_page()) { ?>
-			</div>
-		<?php } ?>
+				</div><?php
+		} ?>
+				<div><?php
+					wp_nav_menu(
+						array(
+							'menu' => 'main_nav', /* menu name */
+							'menu_class' => 'nav navbar-nav',
+							'theme_location' => 'main_nav', /* where in the theme it's assigned */
+							'container' => 'false', /* container class */
+						)
+					); ?>
+				</div><?php
+		if (is_front_page()) { ?>
+			</div><?php
+		} ?>
 
 				</div> <!-- end .container -->
 			</div> <!-- end .navbar -->

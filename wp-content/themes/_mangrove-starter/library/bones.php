@@ -82,21 +82,6 @@ function wp_bootstrap_theme_support() {
 // launching this stuff after theme setup
 add_action('after_setup_theme','wp_bootstrap_theme_support');
 
-function wp_bootstrap_main_nav() {
-	// display the wp3 menu if available
-    wp_nav_menu(
-    	array(
-    		'menu' => 'main_nav', /* menu name */
-    		'menu_class' => 'nav navbar-nav',
-    		'theme_location' => 'main_nav', /* where in the theme it's assigned */
-    		'container' => 'false', /* container class */
-    		'fallback_cb' => 'wp_bootstrap_main_nav_fallback', /* menu fallback */
-    		// 'depth' => '2',  suppress lower levels for now
-    		'walker' => new Bootstrap_walker()
-    	)
-    );
-}
-
 function wp_bootstrap_footer_links() {
 	// display the wp3 menu if available
     wp_nav_menu(
@@ -104,21 +89,10 @@ function wp_bootstrap_footer_links() {
     		'menu' => 'footer_links', /* menu name */
     		'theme_location' => 'footer_links', /* where in the theme it's assigned */
     		'container_class' => 'footer-links clearfix', /* container class */
-    		'fallback_cb' => 'wp_bootstrap_footer_links_fallback' /* menu fallback */
     	)
 	);
 }
 
-// this is the fallback for header menu
-function wp_bootstrap_main_nav_fallback() {
-	// Figure out how to make this output bootstrap-friendly html
-	//wp_page_menu( 'show_home=Home&menu_class=nav' );
-}
-
-// this is the fallback for footer menu
-function wp_bootstrap_footer_links_fallback() {
-	/* you can put a default here if you like */
-}
 
 
 /****************** PLUGINS & EXTRA FEATURES **************************/
