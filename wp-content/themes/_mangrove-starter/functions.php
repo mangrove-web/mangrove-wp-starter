@@ -2,26 +2,19 @@
 namespace Mangrove;
 
 /* Actions */
-add_action( 'init'              , 'Mangrove\add_html5'        );
-add_action( 'after_setup_theme' , 'Mangrove\add_image_sizes'  );
-add_action( 'wp_enqueue_scripts', 'Mangrove\register_styles'  );
-add_action( 'wp_enqueue_scripts', 'Mangrove\register_scripts' );
-add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_styles'   );
-add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'  );
+add_action( 'after_setup_theme' , 'Mangrove\theme_supports'      );
+add_action( 'after_setup_theme' , 'Mangrove\register_menus'      );
+add_action( 'after_setup_theme' , 'Mangrove\add_image_sizes'     );
+add_action( 'wp_enqueue_scripts', 'Mangrove\register_styles'     );
+add_action( 'wp_enqueue_scripts', 'Mangrove\register_scripts'    );
+add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_styles'      );
+add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'     );
 // add_action( 'widgets_init', 'Mangrove\register_sidebars'      );
 
+/* Filters */
+add_filter('show_admin_bar', '__return_false');
+
 /* Functions */
-function add_html5(){
-	add_theme_support( 'html5',
-		array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption'
-		)
-	);
-}
 function add_image_sizes(){
 	add_image_size( 'slider-lg', 1600, 1100, true );
 	add_image_size( 'banner-lg', 1400, 700, true );
@@ -59,6 +52,14 @@ function enqueue_styles(){
 	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( 'mg_custom' );
 }
+function register_menus(){
+	register_nav_menus(                      // wp3+ menus
+		array(
+			'main_nav' => 'The Main Menu',   // main nav in header
+			'footer_links' => 'Footer Links' // secondary nav in footer
+		)
+	);
+}
 function register_scripts(){
 	/* Note: Add dependencies to the dependency array instead of enqueueing separately */
 	wp_register_script( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' );
@@ -77,6 +78,20 @@ function register_scripts(){
 function register_styles(){
 	wp_register_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css' );
 	wp_register_style( 'mg_custom', get_template_directory_uri() . '/library/styles/css/mg_custom.css', array(), '1.0', 'all' );
+}
+function theme_supports(){
+	// add_theme_support( 'custom-background' );
+	// add_theme_support('automatic-feed-links'); // rss thingy
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption'
+		)
+	);
 }
 
 include 'functions-bones.php';

@@ -49,49 +49,6 @@ function wp_bootstrap_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'wp_bootstrap_excerpt_more');
 
-// Adding WP 3+ Functions & Theme Support
-function wp_bootstrap_theme_support() {
-	add_theme_support('post-thumbnails');      // wp thumbnails (sizes handled in functions.php)
-	set_post_thumbnail_size(125, 125, true);   // default thumb size
-	add_theme_support( 'custom-background' );  // wp custom background
-	add_theme_support('automatic-feed-links'); // rss thingy
-	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
-	// adding post format support
-	add_theme_support( 'post-formats',      // post formats
-		array(
-			'aside',   // title less blurb
-			'gallery', // gallery of images
-			'link',    // quick link to other site
-			'image',   // an image
-			'quote',   // a quick quote
-			'status',  // a Facebook like status update
-			'video',   // video
-			'audio',   // audio
-			'chat'     // chat transcript
-		)
-	);
-	add_theme_support( 'menus' );            // wp menus
-	register_nav_menus(                      // wp3+ menus
-		array(
-			'main_nav' => 'The Main Menu',   // main nav in header
-			'footer_links' => 'Footer Links' // secondary nav in footer
-		)
-	);
-}
-
-// launching this stuff after theme setup
-add_action('after_setup_theme','wp_bootstrap_theme_support');
-
-function wp_bootstrap_footer_links() {
-	// display the wp3 menu if available
-    wp_nav_menu(
-    	array(
-    		'menu' => 'footer_links', /* menu name */
-    		'theme_location' => 'footer_links', /* where in the theme it's assigned */
-    		'container_class' => 'footer-links clearfix', /* container class */
-    	)
-	);
-}
 
 
 

@@ -258,11 +258,8 @@ function first_paragraph( $content ){
 }
 add_filter( 'the_content', 'first_paragraph' );
 
-add_filter('show_admin_bar', '__return_false');
 
-if ( function_exists( 'add_theme_support' ) ) {
-add_theme_support( 'post-thumbnails' );
-}
+
 
 
 function mangrove_excerpt_length( $length ) {
