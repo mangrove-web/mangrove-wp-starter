@@ -2,23 +2,34 @@
 namespace Mangrove;
 
 /* Actions */
+add_action( 'init'              , 'Mangrove\add_html5'        );
+add_action( 'after_setup_theme' , 'Mangrove\add_image_sizes'  );
 add_action( 'wp_enqueue_scripts', 'Mangrove\register_styles'  );
 add_action( 'wp_enqueue_scripts', 'Mangrove\register_scripts' );
 add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_styles'   );
-add_action( 'after_setup_theme', 'Mangrove\add_image_sizes'   );
 add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'  );
 // add_action( 'widgets_init', 'Mangrove\register_sidebars'      );
 
 /* Functions */
+function add_html5(){
+	add_theme_support( 'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption'
+		)
+	);
+}
 function add_image_sizes(){
 	add_image_size( 'slider-lg', 1600, 1100, true );
 	add_image_size( 'banner-lg', 1400, 700, true );
 	add_image_size( 'mangrove-xlarge', 1600, 9999, false);
 	add_image_size( 'mangrove-thumb-sq', 350, 350, true);
 	add_image_size( 'mangrove-thumb', 500, 380, true);
-	//add_image_size( 'mangrove-thumb', 530, 300, true );
 }
-function register_sidebars() {
+function register_sidebars(){
 	register_sidebar(array(
 		'id' => 'sidebar1',
 		'name' => 'Main Sidebar',
