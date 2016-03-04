@@ -111,8 +111,9 @@ function register_scripts(){
 	);
 }
 function register_styles(){
+	wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic' );
 	wp_register_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css' );
-	wp_register_style( 'mg_custom', get_template_directory_uri() . '/library/styles/css/mg_custom.css', array(), '1.0', 'all' );
+	wp_register_style( 'mg_custom', get_template_directory_uri() . '/library/styles/css/mg_custom.css', array( 'google-fonts' ), '1.0', 'all' );
 }
 function set_featured_image_from_gallery() {
 	// set featured image from ACF gallery field
