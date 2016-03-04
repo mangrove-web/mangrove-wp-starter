@@ -3,6 +3,9 @@ namespace Mangrove;
 
 /* Actions */
 // add_acf_options_page();
+// enable_shortcodes_in_widgets();
+
+
 add_action( 'after_setup_theme' , 'Mangrove\theme_supports'      );
 add_action( 'after_setup_theme' , 'Mangrove\register_menus'      );
 add_action( 'after_setup_theme' , 'Mangrove\add_image_sizes'     );
@@ -10,10 +13,18 @@ add_action( 'wp_enqueue_scripts', 'Mangrove\register_styles'     );
 add_action( 'wp_enqueue_scripts', 'Mangrove\register_scripts'    );
 add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_styles'      );
 add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'     );
+// add_action( 'save_post', 'Mangrove\set_featured_image_from_gallery'    );
 // add_action( 'widgets_init', 'Mangrove\register_sidebars'      );
 
 /* Filters */
 add_filter('show_admin_bar', '__return_false');
+add_filter( 'post_thumbnail_html', 'Mangrove\remove_image_dimensions', 10 );
+add_filter( 'image_send_to_editor', 'Mangrove\remove_image_dimensions', 10 );
+// add_filter( 'the_content_more_link', 'Mangrove\remove_read_more_jump' );
+
+
+
+
 
 /* Functions */
 function add_acf_options_page(){
@@ -49,6 +60,14 @@ function register_sidebars(){
 		'after_title' => '</h4>',
 	));
 }
+function remove_image_dimensions( $html ) {
+	// Remove height/width attributes on images so they can be responsive
+	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+	return $html;
+}
+function enable_shortcodes_in_widgets(){
+	add_filter( 'widget_text', 'do_shortcode' );
+}
 function enqueue_scripts(){
 	/* Note: Add dependencies to the dependency array instead of enqueueing separately */
 	// wp_enqueue_script('bootstrap'); // uncomment this if bootstrap.js is needed directly by markup
@@ -57,6 +76,16 @@ function enqueue_scripts(){
 function enqueue_styles(){
 	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( 'mg_custom' );
+}
+function remove_read_more_jump( $link ) {
+	$offset = strpos($link, '#more-');
+	if ( $offset ) {
+		$end = strpos( $link, '"',$offset );
+	}
+	if ( $end ) {
+		$link = substr_replace( $link, '', $offset, $end-$offset );
+	}
+	return $link;
 }
 function register_menus(){
 	register_nav_menus(                      // wp3+ menus
@@ -84,6 +113,21 @@ function register_scripts(){
 function register_styles(){
 	wp_register_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css' );
 	wp_register_style( 'mg_custom', get_template_directory_uri() . '/library/styles/css/mg_custom.css', array(), '1.0', 'all' );
+}
+function set_featured_image_from_gallery() {
+	// set featured image from ACF gallery field
+	// Do we need this function?
+	$has_thumbnail = get_the_post_thumbnail($post->ID);
+
+	if ( !$has_thumbnail ) {
+
+		$images = get_field('gallery', false, false);
+		$image_id = $images[0];
+
+		if ( $image_id ) {
+			set_post_thumbnail( $post->ID, $image_id );
+		}
+	}
 }
 function theme_supports(){
 	// add_theme_support( 'custom-background' );
