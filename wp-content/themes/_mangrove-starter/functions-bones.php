@@ -7,9 +7,6 @@ URL: htp://themble.com/bones/
 // Get Bones Core Up & Running!
 require_once('library/bones.php'); // core functions (don't remove)
 
-// Shortcodes
-require_once('library/shortcodes.php');
-
 // Add thumbnail class to thumbnail links
 function add_class_attachment_link( $html ) {
 		$postid = get_the_ID();
