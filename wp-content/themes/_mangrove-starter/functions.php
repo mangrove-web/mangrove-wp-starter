@@ -2,6 +2,7 @@
 namespace Mangrove;
 
 /* Actions */
+// add_acf_options_page();
 add_action( 'after_setup_theme' , 'Mangrove\theme_supports'      );
 add_action( 'after_setup_theme' , 'Mangrove\register_menus'      );
 add_action( 'after_setup_theme' , 'Mangrove\add_image_sizes'     );
@@ -15,6 +16,11 @@ add_action( 'wp_enqueue_scripts', 'Mangrove\enqueue_scripts'     );
 add_filter('show_admin_bar', '__return_false');
 
 /* Functions */
+function add_acf_options_page(){
+	if( function_exists('\acf_add_options_page') ) {
+		\acf_add_options_page();
+	}
+}
 function add_image_sizes(){
 	add_image_size( 'slider-lg', 1600, 1100, true );
 	add_image_size( 'banner-lg', 1400, 700, true );
