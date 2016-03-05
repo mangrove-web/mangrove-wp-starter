@@ -1,7 +1,5 @@
 /* put any custom less here */
 
-body {
-}
 header.main {
   background-position: 50% 50%;
   background-size: cover;
@@ -21,23 +19,20 @@ header.main {
     z-index: 0;
   }
 }
-.container {
-    margin: 0;
-    padding: 0;
+
+#main {
+  padding: $space*2 0 0 0;
+}
+section.space {
+  margin-bottom: $section-space;
+  @media (max-width: $grid-float-breakpoint) {
+    margin-bottom: $section-space/3;
   }
-  #main {
-    padding: $space*2 0 0 0;
-  }
-  section.space {
-    margin-bottom: $section-space;
-    @media (max-width: $grid-float-breakpoint) {
-      margin-bottom: $section-space/3;
-    }
-  }
-  #content {
-    margin-top: 0;
-    padding-top: 0;
-  }
+}
+#content {
+  margin-top: 0;
+  padding-top: 0;
+}
 
 .source-sans-custom {
   font-family: 'Source Sans Pro', sans-serif;
@@ -47,7 +42,6 @@ header.main {
 }
 .h1-section-header {
   font-size: $font-size-medium;
-  // margin: $space*3 auto;
   text-align: left;
   color: $text-color;
 }
@@ -82,7 +76,6 @@ header.main {
 .button {
   font-family: 'futura_ltbold';
   font-weight: 400;
-
 }
 .button-ghost {
   background-color: transparent;

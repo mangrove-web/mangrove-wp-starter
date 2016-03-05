@@ -5,7 +5,6 @@ namespace Mangrove;
 // add_acf_options_page();
 // enable_shortcodes_in_widgets();
 
-
 add_action( 'after_setup_theme' , 'Mangrove\theme_supports'      );
 add_action( 'after_setup_theme' , 'Mangrove\register_menus'      );
 add_action( 'after_setup_theme' , 'Mangrove\add_image_sizes'     );
