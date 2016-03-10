@@ -43,17 +43,15 @@ the_html_element( $classes = 'no-js' ); ?>
 							<h2><?php bloginfo('description');?></h2>
 						</div>
 					</div><?php
-				} ?>
-				<div><?php
-					wp_nav_menu(
-						array(
-							'menu' => 'main_nav', /* menu name */
-							'menu_class' => 'nav navbar-nav',
-							'theme_location' => 'main_nav', /* where in the theme it's assigned */
-							'container' => 'false', /* container class */
-						)
-					); ?>
-				</div>
+				}
+				wp_nav_menu(
+					array(
+						'menu' => 'main_nav', /* menu name */
+						'menu_class' => 'nav navbar-nav',
+						'theme_location' => 'main_nav', /* where in the theme it's assigned */
+						'container' => 'false', /* container class */
+					)
+				); ?>
 			</div> <!-- end .container -->
 		</div> <!-- end .navbar -->
 

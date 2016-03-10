@@ -1,9 +1,8 @@
 $open: '#mobile-nav-toggle:checked ~';
 $z-index: 9999999;
-$mobile-nav-breakpoint: 50em;
 
 %hide-on-desktop {
-	@media( min-width: $mobile-nav-breakpoint ){
+	@media( min-width: $mobile-nav-breakpoint-min ){
 		display: none;
 	}
 }
