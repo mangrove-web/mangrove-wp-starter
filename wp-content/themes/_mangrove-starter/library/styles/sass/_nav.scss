@@ -37,9 +37,6 @@
 		text-align: center;
 		font-size: $font-size-base;
 		@extend .source-sans-custom;
-		@media (max-width: $grid-float-breakpoint){
-			flex-direction: column;
-		}
 		li {
 			padding: 1em;
 			a {
