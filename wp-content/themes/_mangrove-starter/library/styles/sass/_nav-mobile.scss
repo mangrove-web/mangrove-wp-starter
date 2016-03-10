@@ -1,0 +1,47 @@
+$open: '#mobile-nav-toggle:checked ~';
+$z-index: 9999999;
+$mobile-nav-breakpoint: 50em;
+
+%hide-on-desktop {
+	@media( min-width: $mobile-nav-breakpoint ){
+		display: none;
+	}
+}
+
+#mobile-nav-toggle{
+	display: none;
+}
+
+label[for=mobile-nav-toggle]{
+	@extend %hide-on-desktop;
+	position: fixed;
+	z-index: $z-index;
+	top: 0;
+	right: 0;
+	padding: 1rem;
+	&::before{
+		content: '\f0c9';
+		#{$open} & {
+			content: '\f00d';
+		}
+	}
+}
+
+nav.mobile {
+	@extend %hide-on-desktop;
+	position: fixed;
+	z-index: $z-index - 1;
+	top: 0;
+	right: 0;
+	bottom: 100vh;
+	left: 0;
+	overflow: hidden;
+	background: #fff;
+	transition: bottom .5s, padding .5s;
+	padding: 0 1em;
+	#{$open} & {
+		bottom: 0;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+}

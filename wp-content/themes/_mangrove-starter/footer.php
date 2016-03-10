@@ -1,6 +1,6 @@
+<?php namespace Mangrove; ?>
 			<footer>
-
-				<article class="inner-footer contain">
+				<div class="inner-footer contain">
 					<div class="col attribution"><p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p></div>
 
 					<div class="col social">
@@ -8,21 +8,39 @@
 							<li><a href="http://facebook.com"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="http://yelp.com"><i class="fa fa-yelp"></i></a></li>
 							<li><a href="http://instagram.com"><i class="fa fa-instagram"></i></a></li>
-						</ul>`
+						</ul>
 					</div>
 
-				</article>
+				</div>
 			</footer> <!-- end footer -->
 
 		</div> <!-- end #container -->
 
 		<!--[if lt IE 7 ]>
-  			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 		<![endif]-->
 
-		<?php wp_footer(); ?>
+		<?php
+		wp_footer();
+		the_mobile_nav();
+		?>
 
 	</body>
 
-</html>
+</html><?php
+
+// Functions
+
+function the_mobile_nav(){ ?>
+	<input id="mobile-nav-toggle" type="checkbox">
+	<label class="fa fa-2x" for="mobile-nav-toggle"></label>
+	<nav class="mobile"><?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'main_nav', /* where in the theme it's assigned */
+				'container' => false,
+			)
+		); ?>
+	</nav><?php
+}
