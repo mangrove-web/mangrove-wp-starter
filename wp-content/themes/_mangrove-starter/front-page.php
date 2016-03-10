@@ -7,24 +7,11 @@
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-
-					<section class="space subhead">
-						<div class="animated wow fadeIn" data-wow-duration="1s">
-							<h2></h2>
-						</div>
-					</section>
-
-
-
-
-
-
-
-
-
-
-
-
+						<section class="space subhead">
+							<div class="animated wow fadeIn" data-wow-duration="1s">
+								<?php the_content() ?>
+							</div>
+						</section>
 					</article> <!-- end article -->
 
 					<?php

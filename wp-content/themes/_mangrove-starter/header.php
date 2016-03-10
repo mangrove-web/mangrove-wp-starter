@@ -27,7 +27,6 @@ the_html_element( $classes = 'no-js' ); ?>
 		<div class="navbar">
 			<div class="header-container container">
 				<div class="navbar-header">
-
 					<a
 						class="navbar-brand <?php if (is_front_page()) {?>animated fadeIn<?php } ?>"
 						title="<?php echo get_bloginfo('description'); ?>"
