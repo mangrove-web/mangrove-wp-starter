@@ -10,8 +10,9 @@
 /wp-content/themes/*
 !/wp-content/themes/_mangrove-wp-bootstrap-master-3.0
 !/wp-content/themes/_mangrove-starter
-
-
+!/wp-content/plugins
+/wp-content/plugins/*
+!/wp-content/plugins/mangrove*
 
 # always ignore node_modules folders
 **/node_modules
