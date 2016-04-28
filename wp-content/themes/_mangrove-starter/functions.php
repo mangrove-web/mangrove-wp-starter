@@ -129,6 +129,12 @@ function set_featured_image_from_gallery() {
 		}
 	}
 }
+
+// function custom_excerpt_length( $length ) {
+// 	return 50;
+// }
+// add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 function theme_supports(){
 	// add_theme_support( 'custom-background' );
 	// add_theme_support('automatic-feed-links'); // rss thingy
