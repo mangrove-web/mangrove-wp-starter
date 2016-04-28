@@ -1,5 +1,8 @@
-This is a modified version of https://github.com/320press/wordpress-bootstrap by/for Mangrove Web Development
+<h3>This is a WordPress Starter theme created by Mangrove Web Development.  </h3>
+
+This theme is a heavily modified version of https://github.com/320press/wordpress-bootstrap by/for Mangrove Web Development
 http://mangrove-web.com.  See original Readme below
+It is also based on the http://sierra-library.github.io/ library.
 
 <h1>WP BOOTSTRAP</h1>
 
