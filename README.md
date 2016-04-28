@@ -1,6 +1,6 @@
 # mangrove-wp-starter
 
-<h3>This is a WordPress Starter kit created by Mangrove Web Development.  </h3>
+<h3>This is a WordPress Starter kit created by <a href="http://mangrove-web.com">Mangrove Web Development</a>.  </h3>
 
 It includes a .gitignore to ignore all WP core files and plugins.  The only tracked plugin is our Custom plugin to create Custom Post Types.
 
