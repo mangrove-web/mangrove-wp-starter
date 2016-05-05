@@ -69,41 +69,4 @@ function register_cpts(){
 			'taxonomies' => array('category')
 		)
 	);
-	register_post_type(
-		'client',
-		array(
-			'public' => true,
-			'has_archive' => false, // may want to set to true for an index of issues
-			'labels' => array(
-				'name' => 'Clients',
-				'singular_name' => 'Client',
-				'add_item' => 'Add Client',
-				'edit_item' => 'Edit Client'
-			),
-			'public' => true,
-			'exclude_from_search ' => false,
-			'hierarchical' => false,
-			'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes'),
-			'taxonomies' => array('category')
-		)
-	);
-	register_post_type(
-		'knowledge',
-		array(
-			'public' => true,
-			'has_archive' => false, // may want to set to true for an index of issues
-			'labels' => array(
-				'name' => 'Knowledge Base',
-				'singular_name' => 'KB Entry',
-				'add_item' => 'Add KB Entry',
-				'edit_item' => 'Edit KB Entry'
-			),
-			'public' => true,
-			'exclude_from_search ' => false,
-			'rewrite' => array('slug' => 'kb'),
-			'hierarchical' => false,
-			'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes'),
-			'taxonomies' => array('category')
-		)
-	);
 }
