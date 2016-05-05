@@ -33,10 +33,9 @@ function add_acf_options_page(){
 }
 function add_image_sizes(){
 	add_image_size( 'slider-lg', 1600, 1100, true );
-	add_image_size( 'banner-lg', 1400, 700, true );
-	add_image_size( 'mangrove-xlarge', 1600, 9999, false);
-	add_image_size( 'mangrove-thumb-sq', 350, 350, true);
-	add_image_size( 'mangrove-thumb', 500, 380, true);
+	// add_image_size( 'banner-lg', 1400, 700, true );
+	// add_image_size( 'mangrove-xlarge', 1600, 9999, false);
+	// add_image_size( 'mangrove-thumb-sq', 350, 350, true);
 }
 function register_sidebars(){
 	register_sidebar(array(
