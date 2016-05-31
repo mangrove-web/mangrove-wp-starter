@@ -1,8 +1,5 @@
 body {
 }
-section.row {
-    padding-bottom: $space*5; // temp
-  }
 h1, h3 {
   font-family: $headerfont;
   color: $brand-primary;
@@ -41,7 +38,7 @@ p, section, article {
 
 $space: 20px;
 
-.contain {
+.contain, .contain-content { // wide content, not full bleed
   max-width: $container-large-desktop;
   margin: 0 auto;
   padding-left: $space*2;
@@ -51,8 +48,8 @@ $space: 20px;
   }
 }
 
-.contain-text {
-  max-width: 1024px;
+.contain-text { // contain text for readability
+  max-width: 990px;
   padding: 0 $space*2;
   margin: 0 auto;
 }
@@ -86,5 +83,11 @@ $space: 20px;
   }
   h4 {
     margin-bottom: 1em;
+  }
+  p {
+    margin-bottom: 1.5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
