@@ -43,17 +43,13 @@ footer {
     li {
       padding-left: 1em;
       a {
-        color: $mg-gray-med;
+        color: $brand-primary;
       }
     }
   }
   .footer-tagline {
     font-size: $font-size-base-bump;
-    font-family: 'futura_ltbold';
     text-align: center;
     min-width: 30em;
-    @media (max-width: 900px) {
-      order: 1;
-    }
   }
 }

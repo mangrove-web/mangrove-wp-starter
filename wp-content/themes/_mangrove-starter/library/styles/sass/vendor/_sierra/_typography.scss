@@ -1,0 +1,199 @@
+/**
+ *  TYPOGRAPHY
+ */
+
+body {
+  font: #{$font-weight-base} #{$font-size-base}/#{$line-height-base} $basefont;
+  color: $text-body;
+
+  @include breakpoint(bp-medium) {
+    font-size: $font-size-base-medium;
+  }
+
+  @include breakpoint(bp-large) {
+    font-size: $font-size-base-large;
+  }
+}
+
+img {
+  font-size: 12px;
+  line-height: 1.3em;
+}
+
+p, section, article  {
+  font: #{$font-weight-base} #{$font-size-base}/#{$line-height-base} $basefont;
+}
+
+a {
+  color: $brand-primary;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: lighten($brand-primary, 10%);
+    transition: $transition;
+  }
+  &:active {
+    color: lighten($brand-primary, 5%);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headerfont;
+  font-weight: $heading-weight;
+  line-height: $line-height-base;
+  margin: .25em 0 .5em;
+}
+
+h1 {
+  font-size: $font-size-xlarge;
+}
+h2 {
+  font-size: $font-size-base-large-bump;
+}
+h3 {
+  font-size: $font-size-base-large;
+}
+h4 {
+  font-size: $font-size-base-medium-bump;
+}
+h5 {
+  font-size: $font-size-base-medium;
+}
+h6 {
+  font-size: $font-size-base-bump;
+}
+
+small, .small {
+  font-size: $font-size-base*.75;
+}
+
+
+// titles commons
+.text {
+  &-huge, &-big, &-medium {
+    line-height: 1.3em;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+
+    // titles in sections
+    &:first-child {
+      margin-top: .5em;
+    }
+  }
+
+  // titles
+
+  &-huge {
+    font-family: $heading-font;
+    font-size: 30px;
+    font-weight: $heading-weight;
+    text-transform: $heading-case;
+
+    @include breakpoint(bp-large) {
+      font-size: 40px;
+    }
+
+    @include breakpoint(bp-huge) {
+      font-size: 48px;
+    }
+  }
+
+  &-big {
+    font-family: $heading-font;
+    font-size: 24px;
+    font-weight: $heading-weight;
+    text-transform: $heading-case;
+
+    @include breakpoint(bp-large) {
+      font-size: 28px;
+    }
+  }
+
+  &-medium {
+    font-family: $heading-font;
+    font-size: 20px;
+    font-weight: $heading-weight;
+    text-transform: $heading-case;
+  }
+
+  &-small {
+    font-size: 12px;
+
+    @include breakpoint(bp-medium) {
+      font-size: 14px;
+    }
+  }
+
+  // force element to default font state.
+  &-body {
+    font-size: $font-size-base;
+    line-height: 1.5em;
+
+    @include breakpoint(bp-large) {
+      font-size: $font-size-base-large;
+    }
+  }
+
+  // Colours
+  @each $type, $color in $background-color-map {
+    &-#{$type} {
+      color: $color;
+    }
+  }
+
+  &-white {
+    color: $white;
+  }
+}
+
+.text-gray,
+a.text-gray,
+button.text-gray {
+  color: $text-gray;
+}
+
+// Styles
+.text-light {
+  font-weight: 300;
+}
+
+.text-normal {
+  font-weight: 400;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-transform-none {
+  text-transform: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+// titles after titles
+.text-with-subtitle {
+  margin-bottom: 0!important;
+
+  + .text-huge,
+  + .text-big,
+  + .text-medium,
+  + .text-small, {
+    margin-top: .5em;
+  }
+}

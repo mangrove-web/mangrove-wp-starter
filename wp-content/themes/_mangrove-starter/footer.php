@@ -33,8 +33,6 @@
 // Functions
 
 function the_mobile_nav(){ ?>
-	<input id="mobile-nav-toggle" type="checkbox">
-	<label class="fa fa-2x" for="mobile-nav-toggle"></label>
 	<nav class="mobile"><?php
 		wp_nav_menu(
 			array(

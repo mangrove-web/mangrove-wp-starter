@@ -1,35 +1,26 @@
-$open: '#mobile-nav-toggle:checked ~';
-$z-index: 9999999;
-
 %hide-on-desktop {
 	@media( min-width: $mobile-nav-breakpoint-min ){
 		display: none;
 	}
 }
 
-#mobile-nav-toggle{
-	display: none;
-}
-
-label[for=mobile-nav-toggle]{
+.mobile-nav-toggle {
 	@extend %hide-on-desktop;
-	position: fixed;
-	z-index: $z-index;
-	top: 0;
-	right: 0;
-	padding: 1rem;
-	&::before{
+	z-index: $z-mobile-nav-toggle;
+	&:before{
 		content: '\f0c9';
-		#{$open} & {
-			content: '\f00d';
-		}
+		color: $brand-primary;
+	}
+	&.open:before {
+		content: '\f00d';
 	}
 }
+
 
 nav.mobile {
 	@extend %hide-on-desktop;
 	position: fixed;
-	z-index: $z-index - 1;
+	z-index: $z-mobile-nav;
 	top: 0;
 	right: 0;
 	bottom: 100vh;
@@ -37,11 +28,12 @@ nav.mobile {
 	overflow: hidden;
 	background: #fff;
 	transition: bottom .5s, padding .5s;
-	padding: 0 1em;
-	#{$open} & {
-		bottom: 0;
-		padding-top: 1em;
-		padding-bottom: 1em;
-		overflow-x: auto;
-	}
+	padding: 4em 1em 0;
+}
+
+nav.mobile.open {
+	bottom: 0;
+	padding-top: 5em;
+	padding-bottom: 1em;
+	overflow-x: auto;
 }
