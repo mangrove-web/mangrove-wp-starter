@@ -3,6 +3,12 @@
  */
 
 body {
+  background-color: $body-bg;
+  font-weight: normal;
+  min-height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
   font: #{$font-weight-base} #{$font-size-base}/#{$line-height-base} $basefont;
   color: $text-body;
 
@@ -13,11 +19,6 @@ body {
   @include breakpoint(bp-large) {
     font-size: $font-size-base-large;
   }
-}
-
-img {
-  font-size: 12px;
-  line-height: 1.3em;
 }
 
 p, section, article  {
@@ -67,7 +68,42 @@ h6 {
 small, .small {
   font-size: $font-size-base*.75;
 }
+strong, .strong {
+  font-weight: 600;
+}
 
+ul {
+  margin-bottom: 1em;
+}
+
+ul.nostyle {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  &.inline {
+    li {
+      display: inline-block;
+    }
+  }
+}
+ul.nostyle.row {
+  margin: 0 -$grid-gutter-width/2;
+}
+ul.center {
+  text-align: center;
+  li {
+    display: inline-block;
+  }
+}
+
+li {
+  list-style: none;
+  margin-bottom: .5em;
+}
+
+pre {
+  margin-bottom: 2em !important;
+}
 
 // titles commons
 .text {

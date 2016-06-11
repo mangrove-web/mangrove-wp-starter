@@ -32,7 +32,7 @@ Template Name: Styleguide
 
 
 
-<section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Text modifiers</h2>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -145,7 +145,7 @@ Template Name: Styleguide
                 </section>
 
 
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Buttons</h2>
                     <h2 class="text-medium text-gray">Button colors</h2>
                     <div>
@@ -182,7 +182,7 @@ Template Name: Styleguide
                     </div>
                 </section>
 
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Typography sizes</h2>
 
                     <h1>H1</h1>
@@ -214,7 +214,7 @@ Template Name: Styleguide
 
                 </section>
 
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big"> Forms</h2>
 
                     <div class="row">
@@ -453,7 +453,7 @@ Template Name: Styleguide
                     </div>
                 </section>
 
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Tables</h2>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -518,7 +518,7 @@ Template Name: Styleguide
                     </div>
                 </section>
 
-                <section class="section">
+                <section class="section animateIn">
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <h2 class="text-big">Tabs</h2>
@@ -559,7 +559,7 @@ Template Name: Styleguide
                         </div>
                     </div>
                 </section>
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Paginator</h2>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -605,7 +605,7 @@ Template Name: Styleguide
                         </div>
                     </div>
                 </section>
-                 <section class="section">
+                 <section class="section animateIn">
                     <h2 class="text-big">Badges</h2>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -651,7 +651,7 @@ Template Name: Styleguide
                         </div>
                     </div>
                 </section>
-                <section class="section">
+                <section class="section animateIn">
 
                     <div class="row">
 
@@ -809,7 +809,7 @@ Template Name: Styleguide
                 </section>
 
 
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Image modifiers</h2>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -842,7 +842,7 @@ Template Name: Styleguide
                         </div>
                     </div>
                 </section>
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Aligners</h2>
                     <div>
                         <h3 class="text-medium text-gray">Space between</h3>
@@ -931,7 +931,7 @@ Template Name: Styleguide
                         </div>
                     </div>
                 </section>
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Low opacity</h2>
                     <div class="container background-gray opacity-low">
                         <div class="section">
@@ -943,7 +943,7 @@ Template Name: Styleguide
                     </div>
 
                 </section>
-                 <section class="section">
+                 <section class="section animateIn">
                     <h2 class="text-big">Loaders</h2>
                     <div>
                         <a href="#" class="js-show-hide-loading-bar button block-mobile" title="Start / stop loader">Show loading bar</a>
@@ -951,7 +951,7 @@ Template Name: Styleguide
                     </div>
                 </section>
 
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Customizable colors</h2>
                     <h3 class="text-medium text-gray">Brand ( primary / secondary )</h3>
                     <div class="aligner-space-around">
@@ -1013,7 +1013,7 @@ Template Name: Styleguide
                 </section>
             </div>
 
-            <section class="section">
+            <section class="section animateIn">
                 <div class="container">
                     <h2 class="text-big">Containers</h2>
                     <h3 class="text-medium text-gray">Standard</h3>
@@ -1046,7 +1046,7 @@ Template Name: Styleguide
                 </div>
             </section>
             <div class="container">
-                <section class="section">
+                <section class="section animateIn">
                     <h2 class="text-big">Borders</h2>
                     <div class="row">
                         <div class="col-xs-12 col-md-4">

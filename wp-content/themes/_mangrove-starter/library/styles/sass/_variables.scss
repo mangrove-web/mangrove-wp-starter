@@ -5,7 +5,9 @@ $container-large-maxwidth:  1024px;
 $container-medium-maxwidth: 944px;
 $container-small-maxwidth:  400px;
 $radius:                    3px;
+$transition-fast:           200ms ease-in-out all;
 $transition:                300ms ease-in-out all;
+$transition-slow:           500ms ease-in-out all;
 
 $space:                     20px;
 $section-space:             $space*3;

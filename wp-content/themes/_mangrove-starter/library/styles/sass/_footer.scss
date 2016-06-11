@@ -53,3 +53,19 @@ footer {
     min-width: 30em;
   }
 }
+
+
+.footer-links{
+  float: right;
+  margin-bottom: 18px;
+}
+
+.footer-links .menu{
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.footer-links .menu li{
+  float: left;
+  margin-left: 10px;
+}

@@ -1,5 +1,5 @@
 .animateIn {
-  transition: $transition;
+  transition: $transition-slow;
 }
 
 // on load, all items with .animateIn class get a .isHidden class
