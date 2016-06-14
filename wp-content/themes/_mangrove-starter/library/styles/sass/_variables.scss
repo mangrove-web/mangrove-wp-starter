@@ -13,18 +13,18 @@ $space:                     20px;
 $section-space:             $space*3;
 
 // Base Font Families
-$basefont: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
-$line-height-base:      1.4;
-$font-weight-base:      400;
+$basefont:                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
+$line-height-base:          1.4;
+$font-weight-base:          400;
 
-$heading-font: $basefont;
-$heading-weight:        300;
-$heading-case:          none;
+$heading-font:              $basefont;
+$heading-weight:            300;
+$heading-case:              none;
 
-$headerfont: $heading-font; //deprecated use heading-font
+$headerfont:                $heading-font; //deprecated use heading-font
 
 // Font Sizing
-$font-size-base:          16px;
+$font-size-base:            16px;
 
 $font-size-small:           $font-size-base*.8;
 $font-size-base-bump:       $font-size-base*1.25;
@@ -42,13 +42,13 @@ $gray-dark:              #333;
 $gray:                   #555;
 $gray-light:             #777;
 $gray-lighter:           #cacaca;
-$gray-lighter:           #eee;
+$gray-lightest:          #eee;
 $white:                  #fff;
 
 $brand-primary:         #0086c3;
 $brand-secondary:       #a71d5d;
-$brand-dark:            #18232f;
-$brand-light:           #34495e;
+$brand-dark:            darken($brand-primary, 20%);
+$brand-light:           lighten($brand-primary, 20%);
 
 $color-success:         #4caf50;
 $color-info:            #5bc0de;
@@ -62,7 +62,6 @@ $border-color:          #465f78;
 $shadow-color:          rgba(0, 0, 0, .2);
 $box-shadow:            0 0 5px $shadow-color;
 
-$text-color:            $gray;       // deprecated. Use $text-body instead.
 $text-body:             $gray-darker;
 $text-gray:             $gray;
 
