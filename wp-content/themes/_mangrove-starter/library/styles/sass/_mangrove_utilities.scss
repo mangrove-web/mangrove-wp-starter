@@ -114,6 +114,27 @@ textarea {
     resize: vertical;
 }
 
+
+/* columns */
+.cols-2, .cols-3 {
+  @media (min-width: $screen-sm-min) {
+    column-gap: $grid-gutter-width;
+    columns: 2;
+    widows: 2;
+  }
+}
+.cols-2 {
+  @media (min-width: $screen-sm-min) {
+    columns: 2;
+  }
+}
+.cols-3 {
+  @media (min-width: $screen-sm-min) {
+    columns: 3;
+  }
+}
+
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */

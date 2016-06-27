@@ -14,8 +14,6 @@
 !/wp-content/plugins
 /wp-content/plugins/*
 !/wp-content/plugins/mangrove*
-!/wp-content/plugins/gravityforms*
-!/wp-content/plugins/advanced-custom-fields-pro*
 
 # always ignore node_modules folders
 **/node_modules
