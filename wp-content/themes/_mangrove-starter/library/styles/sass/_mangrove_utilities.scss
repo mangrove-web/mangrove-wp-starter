@@ -1,90 +1,32 @@
-/* http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-
-body {
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-h1, h2, h3, h4, h5 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
 .grayscale {
   filter: grayscale(100%);
 }
 
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: $brand-primary;
+  color: white;
+  text-shadow: none;
 }
-
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: $brand-primary;
+  color: white;
+  text-shadow: none;
 }
-
-ul.nostyle {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-  &.inline {
-    li {
-      display: inline-block;
-    }
-  }
-}
-ul.nostyle.row {
-  margin: 0 -$grid-gutter-width/2;
-}
-ul.center {
-  text-align: center;
-  li {
-    display: inline-block;
-  }
-}
-
-/*
- * A better looking default horizontal rule
- */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
-
-/*
- * images / shapes
- */
 
 img {
-    vertical-align: middle;
-    max-width: 100%;
+  vertical-align: middle;
+  max-width: 100%;
 }
+
 i.circle {
   border-radius: 50%;
   width: 1.5em;
@@ -92,6 +34,7 @@ i.circle {
   padding: .25em;
   text-align: center;
 }
+<<<<<<< HEAD
 .circle {
   border-radius: 50%;
 }
@@ -138,123 +81,29 @@ textarea {
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
+=======
+>>>>>>> 87eecb040ced0e26a1d2bba0b9456b512c3b0000
 
+/* Chrome Frame prompt */
 .chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Image replacement
- */
-
+/* Image Replacement */
 .ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
 }
-
 .ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
 }
-
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-}
-
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-.hidden {
-  display: none;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-/* micro clearfix: http://nicolasgallagher.com/micro-clearfix-hack/ */
-/* For modern browsers */
-.clearfix:before,
-.clearfix:after {
-    content:"";
-    display:table;
-}
-
-.clearfix:after {
-    clear:both;
-}
-
-/* For IE 6/7 (trigger hasLayout) */
-.clearfix {
-    zoom:1;
-}
-
 
 /* buttons / extras */
 .btn-circle {
@@ -267,8 +116,6 @@ textarea {
   font-size: 40px;
   color: #fff;
   background: 0 0;
-  -webkit-transition: background .3s ease-in-out;
-  -moz-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
   i {
     -webkit-transition-property: -webkit-transform;
@@ -280,84 +127,22 @@ textarea {
 
 
 /* Admin Top Navigation fixes */
-
 body.admin-bar .navbar-fixed-top{
   top: 28px;
 }
 
-.nav-container{
+.navbar-search {
   padding-left: 0;
-  padding-right: 0;
-}
-
-#inner-header{
-  width: 100%;
-}
-
-input, textarea, select, .uneditable-input {
-  margin-bottom: 0;
-}
-
-.navbar-search{
-  padding-left: 0;
-}
-
-#content{
-  padding: 10px 0 0;
 }
 
 .more-link{
   white-space: nowrap;
 }
 
-.footer-links{
-  float: right;
-  margin-bottom: 18px;
-}
-
-.footer-links .menu{
-  list-style-type: none;
-  margin-left: 0;
-}
-
-.footer-links .menu li{
-  float: left;
-  margin-left: 10px;
-}
-
-/* navbar */
-
-ul.nav {
-  li.dropdown:hover > ul.dropdown-menu {
-      display: block;
-  }
-
-  li.dropdown > ul.dropdown-menu .dropdown-menu{
-    left: 100%;
-    top: 0;
-    // padding-top: 0;
-    margin-top: -6px;
-  }
-
-  >li.dropdown > ul.dropdown-menu > li.dropdown:hover ul.dropdown-menu{
-  }
-
-  .dropdown{
-    > .dropdown-menu{
-      .caret{
-        border-top: 4px solid transparent;
-        border-left: 4px solid $linkcolor;
-        border-bottom: 4px solid transparent;
-        border-right-width: 0;
-      }
-    }
-  }
-}
-
 /* post styling */
 
 #main p.meta{
-  color: #808080;
+  color: $gray-lighter;
 }
 
 .blog #main article {
@@ -394,15 +179,6 @@ div[id*='attachment_']{
   height: 100%;
 }
 
-#main .hero-unit img{
-  margin-bottom: 1em;
-}
-
-#main article img{
-  height: auto;
-  max-width: 100%;
-}
-
 img.alignleft{
   margin-right: 10px;
   float: left;
@@ -416,11 +192,6 @@ img.alignright{
 img.aligncenter{
   display: block;
   margin: 0 auto;
-}
-
-.archive #main .post h3{
-  line-height: 24px;
-  margin-bottom: 10px;
 }
 
 video {
@@ -446,47 +217,8 @@ video {
   height: 100%;
 }
 
-.video-wrapper {
-  width: 630px;
-  max-width: 100%;
-  margin-bottom: 18px;
-}
-
-/* page styling */
-
-#featured-carousel .item{
-  width: 970px;
-  height: 600px;
-}
-
-.carousel-caption p{
-  display: none;
-}
-
 .page-template-page-homepage-php #main article{
   border-bottom: none;
-}
-
-.page-template-page-homepage-php .hero-unit,
-.blog .hero-unit{
-  padding: 1em;
-}
-
-.hero-unit h1 {
-  font-size: 3em;
-}
-
-
-
-/* image attachment */
-
-.attachment #main .post_content img{
-  max-width: 100%;
-}
-
-.ie8 #main .media-grid img{
-  max-height: none !important;
-  max-width: none !important;
 }
 
 .attachment-img{
@@ -496,11 +228,6 @@ video {
 .metadata p.alert-message{
   margin-right: 0;
   margin-bottom: 18px;
-}
-
-#gallery-nav{
-  list-style-type: none;
-  margin-left: 0;
 }
 
 li.next a, li.previous a{
@@ -538,45 +265,403 @@ li.previous a:hover:before{
 }
 
 /* widget styles */
-
 .widget{
   margin-bottom: 18px;
 }
-
 .widgettitle{
   margin-bottom: 9px;
 }
+/* change default form padding for search */
+.widget_search form{
+  padding-left: 0;
+}
 
+/* override standard link hover for the tag cloud widget */
 #tag-cloud{
   margin-bottom: 18px;
   line-height: 160%;
 }
-
-
-
-/* override standard link hover for the tag cloud widget */
 #tag-cloud a:hover,
 .tags a:hover{
   color: #ffffff;
   text-decoration: none;
 }
-
-#tag-cloud a{
+#tag-cloud a {
   white-space: pre;
   text-transform: uppercase;
 }
 
-/* change default form padding for search */
 
-.widget_search form{
-  padding-left: 0;
+
+// From sierra -> helpers
+
+// container
+.aligner {
+  display: flex;
+}
+.aligner-space-between {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.aligner-space-around {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.aligner-center-vertical {
+  align-items: center;
+  display: flex;
+}
+.aligner-center-horitzontal {
+  display: flex;
+  justify-content: center;
+}
+.content-start {
+  display: flex;
+  justify-content: flex-start;
+}
+.content-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// item
+.aligner-item-top {
+  align-self: flex-start;
+}
+.aligner-item-bottom {
+  align-self: flex-end;
+}
+.flex-grow {
+  flex-grow: 1;
 }
 
 
-
-/* responsive embedding/videos */
-.embed-container {
-  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
-.embed-container iframe, .embed-container object, .embed-container embed {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+/* Alignments */
+.pull-left {
+  float: left;
 }
+.pull-right {
+  float: right;
+}
+
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-top {
+  vertical-align: top;
+}
+
+.cf,
+.clearfix {
+  @include clearfix();
+}
+
+/* Text Utilities */
+.ellipsis {
+  @include ellipsis();
+}
+.ellipsis-block {
+  @include ellipsis();
+  display: block;
+}
+.word-break {
+  word-break: break-all;
+}
+.no-break {
+  white-space: nowrap;
+}
+.text-indent {
+  padding-left: $gutterwidth;
+}
+
+
+/* Borders */
+.bordered {
+  border: 1px solid $border-color;
+}
+.border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+.border-left {
+  border-left: 1px solid $border-color;
+}
+.border-right {
+  border-right: 1px solid $border-color;
+}
+.border-top {
+  border-top: 1px solid $border-color;
+}
+
+.display-block {
+  display: block;
+}
+
+.block-mobile {
+  @include breakpoint(bp-small, max-width) {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; // useful for buttons
+  }
+}
+
+.display-inline {
+  display: inline;
+}
+
+.no-margin {
+  margin: 0!important;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.opacity-low {
+  opacity: .5;
+}
+
+
+.rounded-corners {
+  border-radius: 15%;
+}
+
+.rounded,
+.circle {
+  border-radius: 100%;
+}
+
+
+/* Visibility / Responsiveness */
+.invisible {
+  visibility: hidden;
+}
+
+/* * Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* * Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/* * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.hidden-large {
+  @include breakpoint(bp-large) {
+    display: none;
+  }
+
+  @include breakpoint(bp-huge) {
+    display: inline-block;
+  }
+}
+
+.hidden-medium {
+  @include breakpoint(bp-medium) {
+    display: none;
+  }
+
+  @include breakpoint(bp-large) {
+    display: inline-block;
+  }
+}
+
+.show-small {
+  @include breakpoint(bp-medium) {
+    display: none;
+  }
+}
+
+.hide-small {
+  display: none;
+  @include breakpoint(bp-medium) {
+    display: block;
+  }
+}
+
+.hide-small-inline-block {
+  display: none!important;
+
+  @include breakpoint(bp-medium) {
+    display: inline-block!important;
+  }
+}
+
+.hide-medium {
+  display: block;
+
+  @include breakpoint(bp-medium) {
+    display: none;
+  }
+
+  @include breakpoint(bp-large) {
+    display: block;
+  }
+}
+
+/**
+ *  BOOTSTRAP VISIBILITY UTILITIES
+ *  Note: Deprecated .visible-xs, .visible-sm, .visible-md, and .visible-lg as of v3.2.0
+ */
+
+@include responsive-invisibility('.visible-xs');
+@include responsive-invisibility('.visible-sm');
+@include responsive-invisibility('.visible-md');
+@include responsive-invisibility('.visible-lg');
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (max-width: $screen-xs-max) {
+  @include responsive-visibility('.visible-xs');
+}
+
+.visible-xs-block {
+  @media (max-width: $screen-xs-max) {
+    display: block !important;
+  }
+}
+
+.visible-xs-inline {
+  @media (max-width: $screen-xs-max) {
+    display: inline !important;
+  }
+}
+
+.visible-xs-inline-block {
+  @media (max-width: $screen-xs-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-visibility('.visible-sm');
+}
+
+.visible-sm-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: block !important;
+  }
+}
+
+.visible-sm-inline {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline !important;
+  }
+}
+
+.visible-sm-inline-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-visibility('.visible-md');
+}
+
+.visible-md-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: block !important;
+  }
+}
+
+.visible-md-inline {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline !important;
+  }
+}
+
+.visible-md-inline-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-visibility('.visible-lg');
+}
+
+.visible-lg-block {
+  @media (min-width: $screen-lg-min) {
+    display: block !important;
+  }
+}
+
+.visible-lg-inline {
+  @media (min-width: $screen-lg-min) {
+    display: inline !important;
+  }
+}
+
+.visible-lg-inline-block {
+  @media (min-width: $screen-lg-min) {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  @include responsive-invisibility('.hidden-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-invisibility('.hidden-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-invisibility('.hidden-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-invisibility('.hidden-lg');
+}
+
+

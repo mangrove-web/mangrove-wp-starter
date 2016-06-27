@@ -1,16 +1,25 @@
 @charset "UTF-8";
 
-// Init variables
 @import 'variables';
-@import 'animate';
 
-// Add library
-@import 'sierra/sierra'; // http://sierra-library.github.io/
+@import 'utils/mixins';
+@import 'utils/placeholders';
 
+@import 'reset';
+
+//@import 'fonts';
+
+// Add libraries
+@import 'vendor/animate';
+@import 'vendor/sierra.scss'; // http://sierra-library.github.io/
+@import "vendor/headroom";
+@import "vendor/waypoints";
+@import "vendor/flexslider";
+
+// Custom Stuff
 @import "mangrove_utilities";
 @import "project-basics";
 @import "grid-basics";
-@import "header";
 @import "nav";
 @import "nav-mobile";
 @import "footer";

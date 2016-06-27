@@ -1,11 +1,11 @@
 /**
-* Loading bar
-*
-* Markdown:
-* ---------
-* <div class="loading-bar"></div>
-*
-*/
+ *  LOADING BAR
+ *
+ *  Markup:
+ *  ---------
+ *  <div class="loading-bar"></div>
+ *
+ */
 
 .loading-bar {
   height: 4px;
@@ -15,7 +15,7 @@
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 1000;
 }
 
 .loading-bar::before {

@@ -1,6 +1,27 @@
 /**
-* PAGINATOR
-*/
+ *  PAGINATOR
+ *
+ *  Markup:
+ *  -------
+ *
+ *  <ul class="paginator-list">
+ *    <li class="paginator-list-item">
+ *      <a href="#" class="paginator-list-link">Prev</a>
+ *    </li>
+ *    <li class="paginator-list-item">
+ *      <a href="#" class="paginator-list-link">1</a>
+ *    </li>
+ *    <li class="paginator-list-item">
+ *      <a href="#" class="paginator-list-link active">2</a>
+ *    </li>
+ *    <li class="paginator-list-item">
+ *      <a href="#" class="paginator-list-link">3</a>
+ *    </li>
+ *    <li class="paginator-list-item">
+ *      <a href="#" class="paginator-list-link">Next</a>
+ *    </li>
+ *  </ul>
+ */
 
 .paginator-list {
 
@@ -23,6 +44,7 @@
 
     .paginator-list-link {
       background-color: $paginator-item-bg;
+      border: 1px solid $paginator-item-border;
       border-radius: $paginator-item-radius;
       color: $paginator-item-color;
       display: block;

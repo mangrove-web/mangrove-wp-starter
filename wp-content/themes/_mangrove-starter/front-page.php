@@ -1,36 +1,42 @@
 <?php get_header(); ?>
 
-			<div id="content" class="clearfix row">
+	<div id="content" class="animateIn">
 
-				<div id="main" class="col-sm-12 clearfix" role="main">
+		<div id="main">
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-						<section class="space subhead">
-							<div class="animated wow fadeIn" data-wow-duration="1s">
-								<?php the_content() ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+
+					<section class="">
+
+							<div class="flexslider loading">
+							  <ul class="slides">
+							    <li>
+							      <img src="https://placeholdit.imgix.net/~text?txtsize=117&bg=2196f3&txtclr=000000&txt=1400%C3%97600&w=1400&h=600" />
+							    </li>
+							    <li>
+							      <img src="https://placeholdit.imgix.net/~text?txtsize=117&bg=e91e63&txtclr=000000&txt=1400%C3%97600&w=1400&h=600" />
+							    </li>
+							    <li>
+							      <img src="https://placeholdit.imgix.net/~text?txtsize=117&bg=009688&txtclr=000000&txt=1400%C3%97600&w=1400&h=600" />
+							    </li>
+							  </ul>
 							</div>
-						</section>
-					</article> <!-- end article -->
 
-					<?php
-						// No comments on homepage
-						//comments_template();
-					?>
+							<?php the_content() ?>
 
-					<?php endwhile; ?>
+					</section>
 
-					<?php else : ?>
+				</article> <!-- end article -->
 
 
+			<?php endwhile; endif; ?>
 
-					<?php endif; ?>
+		</div> <!-- end #main -->
 
-				</div> <!-- end #main -->
+		<?php //get_sidebar(); // sidebar 1 ?>
 
-				<?php //get_sidebar(); // sidebar 1 ?>
-
-			</div> <!-- end #content -->
+	</div> <!-- end #content -->
 
 <?php get_footer(); ?>

@@ -1,9 +1,16 @@
 /**
-* Tipography
-*/
+ *  TYPOGRAPHY
+ */
+
 body {
+  background-color: $body-bg;
+  font-weight: normal;
+  min-height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
   font: #{$font-weight-base} #{$font-size-base}/#{$line-height-base} $basefont;
-  color: $text-color;
+  color: $text-body;
 
   @include breakpoint(bp-medium) {
     font-size: $font-size-base-medium;
@@ -14,29 +21,89 @@ body {
   }
 }
 
-img {
-  font-size: 12px;
-  line-height: 1.3em;
-}
-
-p {
-  line-height: 1.5em;
-  margin-bottom: 1.5em;
+p, section, article  {
+  font: #{$font-weight-base} #{$font-size-base}/#{$line-height-base} $basefont;
 }
 
 a {
   color: $brand-primary;
   text-decoration: none;
+  transition: $transition;
 
   &:hover {
-    color: rgba($brand-primary, .8);
+    color: lighten($brand-primary, 10%);
+    transition: $transition;
   }
-
-  &:focus {
-    color: $brand-primary;
+  &:active {
+    color: lighten($brand-primary, 5%);
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headerfont;
+  font-weight: $heading-weight;
+  line-height: $line-height-base;
+  margin: .25em 0 .5em;
+}
+
+h1 {
+  font-size: $font-size-xlarge;
+}
+h2 {
+  font-size: $font-size-base-large-bump;
+}
+h3 {
+  font-size: $font-size-base-large;
+}
+h4 {
+  font-size: $font-size-base-medium-bump;
+}
+h5 {
+  font-size: $font-size-base-medium;
+}
+h6 {
+  font-size: $font-size-base-bump;
+}
+
+small, .small {
+  font-size: $font-size-base*.75;
+}
+strong, .strong {
+  font-weight: 600;
+}
+
+ul {
+  margin-bottom: 1em;
+}
+
+ul.nostyle {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  &.inline {
+    li {
+      display: inline-block;
+    }
+  }
+}
+ul.nostyle.row {
+  margin: 0 -$grid-gutter-width/2;
+}
+ul.center {
+  text-align: center;
+  li {
+    display: inline-block;
+  }
+}
+
+li {
+  list-style: none;
+  margin-bottom: .5em;
+}
+
+pre {
+  margin-bottom: 2em !important;
+}
 
 // titles commons
 .text {
@@ -52,13 +119,6 @@ a {
   }
 
   // titles
-  &, &-small {
-    font-size: 12px;
-
-    @include breakpoint(bp-medium) {
-      font-size: 14px;
-    }
-  }
 
   &-huge {
     font-family: $heading-font;
@@ -93,6 +153,14 @@ a {
     text-transform: $heading-case;
   }
 
+  &-small {
+    font-size: 12px;
+
+    @include breakpoint(bp-medium) {
+      font-size: 14px;
+    }
+  }
+
   // force element to default font state.
   &-body {
     font-size: $font-size-base;
@@ -115,10 +183,10 @@ a {
   }
 }
 
-.text-grey,
-a.text-grey,
-button.text-grey {
-  color: $text-grey;
+.text-gray,
+a.text-gray,
+button.text-gray {
+  color: $text-gray;
 }
 
 // Styles
@@ -154,9 +222,7 @@ button.text-grey {
   font-family: 'Lato', sans-serif;
 }
 
-
 // titles after titles
-
 .text-with-subtitle {
   margin-bottom: 0!important;
 
@@ -166,11 +232,4 @@ button.text-grey {
   + .text-small, {
     margin-top: .5em;
   }
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-weight: $heading-weight;
 }

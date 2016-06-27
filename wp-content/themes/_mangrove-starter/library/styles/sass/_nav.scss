@@ -1,59 +1,79 @@
+$z-navbar: 999;
+$z-mobile-nav: 998;
+$z-mobile-nav-toggle: 1000;
+
 %hide-on-mobile {
 	@media( max-width: $mobile-nav-breakpoint-max ){
-		display: none;
+		display: none!important;
 	}
 }
 
-.navbar-collapse {
+.header-container {
 	width: 100%;
-	padding-bottom: 70px;
-	background: url('../../images/bg-mtn.png') repeat-x;
-	background-position: bottom;
-	background-size: 120px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: ($grid-gutter-width/2);
+	padding-bottom: ($grid-gutter-width/2);
+	align-items: center;
+	@media( max-width: $mobile-nav-breakpoint-max ){
+		justify-content: flex-end;
+	}
 }
+
+.navbar {
+	z-index: $z-navbar;
+	width: 100%;
+	clear: both;
+	padding: 0;
+	background-color: $gray-lighter;
+}
+
+.navbar-brand,
+.navbar-brand h1 {
+	margin: 0;
+	line-height: 1;
+}
+
 .navbar-header {
 	text-align: center;
-	margin: 40px 0 40px;
-}
-.home {
-	.navbar-header {
-		margin: 0;
-		text-align: left;
-	}
-	.navbar-brand {
-		margin: 10px;
-		img {
-			max-width: 25%;
-		}
+	line-height: 1;
+	white-space: nowrap;
+	@media( max-width: $mobile-nav-breakpoint-max ){
+	  text-align: left;
+	  flex: 1;
 	}
 }
+
 .navbar-nav {
-	&#menu-top-nav {@extend %hide-on-mobile};
-	@extend .source-sans-custom;
+	@extend %hide-on-mobile;
 	width: 100%;
 	max-width: 1024px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
-	text-align: center;
+	justify-content: flex-end;
 	font-size: $font-size-base;
-	li {
-		padding: 1em;
-		a {
-			color: #fff;
-			@extend.transition-default;
-			&:hover {
-				color: $mg-teal;
-			}
+	ul, li {
+		padding: 0;
+		margin: 0;
+	}
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	a {
+		color: $brand-primary;
+		transition: $transition;
+		padding: .5em 1em;
+		&:hover {
+			color: lighten($brand-primary, 10%);
+			transition: $transition;
+		}
+		&:hover {
+			color: lighten($brand-primary, 5%);
+			transition: $transition;
 		}
 	}
-
-}
-.navbar {
-	font-family: 'Source Sans Pro', sans-serif;
-	z-index: 100;
-	width: 100%;
-	clear: both;
-	display: flex;
 }

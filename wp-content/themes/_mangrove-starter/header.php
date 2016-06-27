@@ -23,9 +23,10 @@ the_html_element( $classes = 'no-js' ); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	<header class="main" role="banner" >
-		<div class="navbar">
+
+	<header class="navbar headroom"><!-- add/remove .headroom for auto hiding nav -->
 			<div class="header-container container">
+
 				<div class="navbar-header">
 					<a
 						class="navbar-brand <?php if (is_front_page()) {?>animated fadeIn<?php } ?>"
@@ -36,29 +37,18 @@ the_html_element( $classes = 'no-js' ); ?>
 					</a>
 				</div>
 
-				<?php
-				if ( is_front_page() ) { ?>
-					<div class="banner">
-						<div class="page-header animated fadeInUp" >
-							<h2><?php bloginfo('description');?></h2>
-						</div>
-					</div><?php
-				}
-				wp_nav_menu(
+				<?php wp_nav_menu(
 					array(
 						'menu' => 'main_nav', /* menu name */
-						'menu_class' => 'nav navbar-nav',
+						'menu_class' => 'navbar-nav',
 						'theme_location' => 'main_nav', /* where in the theme it's assigned */
-						'container' => 'false', /* container class */
+						'container' => false, /* container class */
 					)
 				); ?>
-			</div> <!-- end .container -->
-		</div> <!-- end .navbar -->
 
-		<div
-			class="overlay <?php if (is_front_page()) { echo 'animated fadeIn'; } ?>"
-			style="background-color: <?php the_field('banner_highlight_rgba');?>">
-		</div>
+				<label class="mobile-nav-toggle fa fa-2x" for="mobile-nav-toggle"></label>
+
+			</div> <!-- end .container -->
 	</header> <!-- end header -->
 
 	<div class="container">

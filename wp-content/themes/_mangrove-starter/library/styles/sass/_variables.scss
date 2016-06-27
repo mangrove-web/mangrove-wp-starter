@@ -1,168 +1,175 @@
-
-/**
-*  $LAYOUT
-*/
-
-
+// Layout
+$gutterwidth:               30px;
 $container-maxwidth:        1440px;
 $container-large-maxwidth:  1024px;
 $container-medium-maxwidth: 944px;
 $container-small-maxwidth:  400px;
 $radius:                    3px;
-$border-box:                true;
+$transition-fast:           200ms ease-in-out all;
+$transition:                300ms ease-in-out all;
+$transition-slow:           500ms ease-in-out all;
 
 $space:                     20px;
 $section-space:             $space*3;
 
-/**
-*  $FONT
-*/
+// Base Font Families
+$basefont:                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
+$line-height-base:          1.4;
+$font-weight-base:          400;
 
-@font-face {
-  font-family: 'libre_baskervilleregular';
-  src: url('../../fonts/baskerville/librebaskerville-regular-webfont.eot');
-  src: url('../../fonts/baskerville/librebaskerville-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../../fonts/baskerville/librebaskerville-regular-webfont.woff2') format('woff2'),
-       url('../../fonts/baskerville/librebaskerville-regular-webfont.woff') format('woff'),
-       url('../../fonts/baskerville/librebaskerville-regular-webfont.ttf') format('truetype'),
-       url('../../fonts/baskerville/librebaskerville-regular-webfont.svg#libre_baskervilleregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+$heading-font:              $basefont;
+$heading-weight:            300;
+$heading-case:              none;
 
-@font-face {
-    font-family: 'futura_ltbold';
-    src: url('../../fonts/futura/futuralt-bold-webfont.eot');
-    src: url('../../fonts/futura/futuralt-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/futura/futuralt-bold-webfont.woff2') format('woff2'),
-         url('../../fonts/futura/futuralt-bold-webfont.woff') format('woff'),
-         url('../../fonts/futura/futuralt-bold-webfont.ttf') format('truetype'),
-         url('../../fonts/futura/futuralt-bold-webfont.svg#futura_ltbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+$headerfont:                $heading-font; //deprecated use heading-font
 
-}
+// Font Sizing
+$font-size-base:            16px;
 
-@font-face {
-    font-family: 'futura_ltbook';
-    src: url('../../fonts/futura/futuralt-book-webfont.eot');
-    src: url('../../fonts/futura/futuralt-book-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/futura/futuralt-book-webfont.woff2') format('woff2'),
-         url('../../fonts/futura/futuralt-book-webfont.woff') format('woff'),
-         url('../../fonts/futura/futuralt-book-webfont.ttf') format('truetype'),
-         url('../../fonts/futura/futuralt-book-webfont.svg#futura_ltbook') format('svg');
-    font-weight: normal;
-    font-style: normal;
+$font-size-small:           $font-size-base*.8;
+$font-size-base-bump:       $font-size-base*1.25;
+$font-size-base-medium:     $font-size-base*1.5;
+$font-size-base-medium-bump:$font-size-base*1.75;
+$font-size-base-large:      $font-size-base*2;
+$font-size-base-large-bump: $font-size-base*2.5;
+$font-size-xlarge:          $font-size-base*3;
 
-}
+// Colors
+$black:                  #000;
+$gray-darkest:           #111;
+$gray-darker:            #222;
+$gray-dark:              #333;
+$gray:                   #555;
+$gray-light:             #777;
+$gray-lighter:           #cacaca;
+$gray-lightest:          #eee;
+$white:                  #fff;
 
-@font-face {
-    font-family: 'futura_ltheavy';
-    src: url('../../fonts/futura/futuralt-heavy-webfont.eot');
-    src: url('../../fonts/futura/futuralt-heavy-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/futura/futuralt-heavy-webfont.woff2') format('woff2'),
-         url('../../fonts/futura/futuralt-heavy-webfont.woff') format('woff'),
-         url('../../fonts/futura/futuralt-heavy-webfont.ttf') format('truetype'),
-         url('../../fonts/futura/futuralt-heavy-webfont.svg#futura_ltheavy') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-$basefont: 'futura_ltbook', sans-serif;
-$headerfont: 'libre_baskervilleregular';
-$codefont: 'Courier New', monospace;
-
-
-$font-size-base:        14px;
-
-$font-size-small:        $font-size-base*.8;
-$font-size-base-bump:   $font-size-base*1.25;
-$font-size-base-medium: $font-size-base*1.5;
-$font-size-base-large:  $font-size-base*1.75;
-
-$font-size-medium:         $font-size-base*2;
-$font-size-large:       $font-size-base*2.5;
-$font-size-xlarge:       $font-size-base*3;
-
-
-$line-height-base:      1.5em;
-$font-weight-base:      400;
-
-
-/**
-*  $COLORS
-*/
-
-// white
-$white:                 #ffffff;
-
-$mg-teal:               #1abc9c;
-$mg-blue-lighter:       #3c5499;
-$mg-blue:               #273a71;
-
-$mg-gray-med:           #474747;
-
-// Brand colors
-$brand-primary:         #1abc9c;
-$brand-secondary:       $mg-blue-lighter;
-$brand-dark:            #18232f;
-
+$brand-primary:         #0086c3;
+$brand-secondary:       #a71d5d;
+$brand-dark:            darken($brand-primary, 20%);
+$brand-light:           lighten($brand-primary, 20%);
 
 $color-success:         #4caf50;
 $color-info:            #5bc0de;
 $color-warning:         #f0ad4e;
 $color-error:           #e74c3c;
 
-// Body background
-$body-bg:               #fff;
+$body-bg:               $white;
 
-// Grey :               #dee6ea;
-$grey-light:            #edf3f6;
-$grey-soft:             $grey-light;
-$grey-dark:             #969da6;
-$background-grey:       $grey-soft;
 $border-color:          #465f78;
 
-
-
-// Typography colors
-$text-dark:             #3e4145;   // body text
-$text-color:            $text-dark;
-$text-grey:             #969da6;
-
-// Tags
-$tag-text-color:        $text-color;
-$tag-bg-color:          #34495e;
-$tag-bullet:            $body-bg;
-
-// Rating
-$rating-bg:             #34495e;
-
-// Headings
-$heading-font:          $headerfont;
-$heading-weight:        300;
-$heading-case:          none;
-
-// Shadows
 $shadow-color:          rgba(0, 0, 0, .2);
 $box-shadow:            0 0 5px $shadow-color;
 
-// Forms
-$form-bg-color:         transparent;
-$form-text-color:       $text-color;
+$text-body:             $gray-darker;
+$text-gray:             $gray;
 
-// Tables
-$table-bg-color:        #34495e;
-$table-header-bg-color: $body-bg;
-$table-text-color:      $text-color;
+$link-color:            $brand-primary;
 
-// text map
+
+// Buttons
+$button-bg-color:       $brand-primary;
+$button-text-color:     $white;
+$button-border-color:   $brand-primary;
+$button-border-radius:  2em;
+$button-sizes: (
+  'normal': (
+    fontSize: 12px,
+    lineHeight: 1.5,
+    paddingTB: 10px,
+    paddingLR: 20px
+  ),
+  'big': (
+    fontSize: 16px,
+    lineHeight: 1.5,
+    paddingTB: 10px,
+    paddingLR: 30px
+  ),
+  'small': (
+    fontSize: 11px,
+    lineHeight: 1.273,
+    paddingTB: 6px,
+    paddingLR: 20px
+  ),
+  'huge': (
+    fontSize: 16px,
+    lineHeight: 1.5,
+    paddingTB: 15px,
+    paddingLR: 30px
+  ),
+  'hugeLg': (
+    fontSize: 18px,
+    lineHeight: 1.5,
+    paddingTB: 18px,
+    paddingLR: 50px
+  )
+);
+
+
+// Breakpoints
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-xs-max:              ( $screen-sm - 1 );
+
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-sm-max:              ( $screen-md - 1 );
+
+
+$screen-lg:                  1280px;
+$screen-lg-min:              $screen-lg;
+$screen-md-max:              ( $screen-lg - 1 );
+
+
+$screen-huge:                1500px;
+$screen-huge-min:            $screen-huge;
+$screen-lg-max:              ( $screen-huge - 1 );
+
+$mobile-nav-breakpoint:     $screen-sm-min;
+$mobile-nav-breakpoint-min: $mobile-nav-breakpoint;
+$mobile-nav-breakpoint-max: ($mobile-nav-breakpoint - 1);
+
+$grid-float-breakpoint:     $mobile-nav-breakpoint;
+$grid-float-breakpoint-max: $mobile-nav-breakpoint-max;
+
+
+
+// Bootstrap Grid
+$grid-columns:              12;
+$grid-gutter-width:         $gutterwidth;
+
+
+// CAUTION: This container sizes are deprecated. Use $container-maxwidth instead.
+
+// Small screen / tablet
+$container-tablet:             auto; // (720px + $grid-gutter-width);
+//** For `$screen-sm-min` and up.
+$container-sm:                 auto; // $container-tablet;
+
+// Medium screen / desktop
+$container-desktop:            auto; // (940px + $grid-gutter-width);
+//** For `$screen-md-min` and up.
+$container-md:                 auto; // $container-desktop;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width);
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop;
+
+
+/**
+ *  COMPONENTS
+ */
+
 $text-color-map: (
   primary:              $brand-primary,
   secondary:            $brand-secondary,
-  dark:                 $text-dark,
-  grey:                 $text-grey,
+  body:                 $text-body,
+  gray:                 $text-gray,
   green:                $color-success,
   success:              $color-success,
   red:                  $color-error,
@@ -170,33 +177,7 @@ $text-color-map: (
   warning:              $color-warning
 );
 
-// background-color-map
-$background-color-map: (
-  'primary':              $brand-primary,
-  'dark':                 $brand-dark,
-  'secondary':            $brand-secondary,
-  'white':                $white,
-  'success':              $color-success,
-  'info':                 $color-info,
-  'warning':              $color-warning,
-  'error':                $color-error,
-  'grey':                 $background-grey,
-  'grey-dark':            $grey-dark,
-  'grey-soft':            $grey-soft,
-  'grey-light':           $grey-light
-);
-
-$text-default:          $text-dark;
-// Links
-
-$linkcolor         : $brand-primary;
-$linkcolorhover    : darken($linkcolor, 10);
-$linkcolorvisited  : $brand-primary;
-$linkcolorfocus    : darken($linkcolorvisited, 10);
-
-$transition-default: .5s ease all;
 // Social colors
-
 $fb: rgb(59, 89, 182);
 $tw: rgb(64, 153, 255);
 $googleplus: rgb(215, 61, 50);
@@ -212,6 +193,51 @@ $linkedin: #4875b4;
 $flickr: #fe0883;
 $foursquare: #8fd400;
 
+// Background colors
+$background-color-map: (
+  'primary':              $brand-primary,
+  'dark':                 $brand-dark,
+  'secondary':            $brand-secondary,
+  'white':                $white,
+  'success':              $color-success,
+  'info':                 $color-info,
+  'warning':              $color-warning,
+  'error':                $color-error,
+  'gray':                 $gray,
+  'gray-light':           $gray-light
+);
+
+// Badges
+$badge-color:           $text-body;
+$badge-bg:              $brand-light;
+$badges-color-map: (
+  primary:              $brand-primary,
+  secondary:            $brand-secondary,
+  dark:                 $brand-dark,
+  light:                $gray,
+  success:              $color-success,
+  error:                $color-error,
+  warning:              $color-warning
+);
+
+// Forms
+$form-bg-color:               $body-bg;
+$form-text-color:             $text-body;
+
+// Loading spinner
+$loading-spinner-bg:          $white;
+
+// Paginator
+$paginator-item-radius:       $radius;
+$paginator-item-bg:           $brand-light;
+$paginator-item-color:        $text-body;
+$paginator-item-border:       $body-bg;         // only for compact paginator
+$paginator-item-active-bg:    $brand-primary;
+$paginator-item-active-color: $text-body;
+
+// Rating circle
+$rating-bg:                   $brand-light;
+
 // Rating colors
 $rating1:     #dd2c00;
 $rating2:     #ff5722;
@@ -225,175 +251,24 @@ $rating9:     #43a047;
 $rating10:    #388e3c;
 
 $background-color-map: map-merge($background-color-map, (
-  rating1: $rating1,
-  rating2: $rating2,
-  rating3: $rating3,
-  rating4: $rating4,
-  rating5: $rating5,
-  rating6: $rating6,
-  rating7: $rating7,
-  rating8: $rating8,
-  rating9: $rating9,
-  rating10: $rating10
+  rating1:    $rating1,
+  rating2:    $rating2,
+  rating3:    $rating3,
+  rating4:    $rating4,
+  rating5:    $rating5,
+  rating6:    $rating6,
+  rating7:    $rating7,
+  rating8:    $rating8,
+  rating9:    $rating9,
+  rating10:   $rating10
 ));
 
+// Tables
+$table-bg-color:        $body-bg;
+$table-header-bg-color: $gray-lighter;
+$table-text-color:      $text-body;
 
-/**
-*  $BUTTONS
-*/
-
-$button-bg-color:       $mg-blue-lighter; // default color for buttons
-$button-text-color:     #fff; // default color for buttons
-$button-border-color:   $body-bg;
-$button-border-radius:  0;
-$button-sizes: (
-  normal: (
-    fontSize: 12px,
-    lineHeight: 1.5,
-    paddingTB: 10px,
-    paddingLR: 20px
-  ),
-  big: (
-    fontSize: 16px,
-    lineHeight: 1.5,
-    paddingTB: 10px,
-    paddingLR: 30px
-  ),
-  small: (
-    fontSize: 11px,
-    lineHeight: 1.273,
-    paddingTB: 6px,
-    paddingLR: 20px
-  ),
-  huge: (
-    fontSize: 16px,
-    lineHeight: 1.5,
-    paddingTB: 15px,
-    paddingLR: 30px
-  ),
-  hugeLg: (
-    fontSize: 18px,
-    lineHeight: 1.5,
-    paddingTB: 18px,
-    paddingLR: 50px
-  )
-);
-
-
-/**
-* BADGES
-*/
-
-$badge-color:           $text-color;
-$badge-bg:              #34495e;
-
-$badges-color-map: (
-  primary:              $brand-primary,
-  secondary:            $brand-secondary,
-  dark:                 $brand-dark,
-  grey:                 $text-grey,
-  success:              $color-success,
-  error:                $color-error,
-  warning:              $color-warning
-);
-
-
-/**
-*  $PAGINATOR
-*/
-
-$paginator-item-radius:       $radius;
-$paginator-item-bg:           #34495e;
-$paginator-item-color:        $text-color;
-
-$paginator-item-border:       $body-bg;         // only for compact paginator
-$paginator-item-active-bg:    $brand-primary;
-$paginator-item-active-color: $text-color;
-
-
-/**
-*  $MEDIA QUERIES BREAKPOINTS
-*/
-
-// Extra small screen / phone
-//** Deprecated `@screen-xs` as of v3.0.1
-$screen-xs:                  480px;
-//** Deprecated `$screen-xs-min` as of v3.2.0
-$screen-xs-min:              $screen-xs;
-//** Deprecated `$screen-phone` as of v3.0.1
-$screen-phone:               $screen-xs-min;
-
-// Small screen / tablet
-//** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm:                  768px;
-$screen-sm-min:              $screen-sm;
-//** Deprecated `$screen-tablet` as of v3.0.1
-$screen-tablet:              $screen-sm-min;
-
-// Medium screen / desktop
-//** Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  992px;
-$screen-md-min:              $screen-md;
-//** Deprecated `$screen-desktop` as of v3.0.1
-$screen-desktop:             $screen-md-min;
-
-// Large screen / wide desktop
-//** Deprecated `$screen-lg` as of v3.0.1
-$screen-lg:                  1280px;
-$screen-lg-min:              $screen-lg;
-//** Deprecated `$screen-lg-desktop` as of v3.0.1
-$screen-lg-desktop:          $screen-lg-min;
-
-// So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm-min - 1);
-$screen-sm-max:              ($screen-md-min - 1);
-$screen-md-max:              ($screen-lg-min - 1);
-
-
-$mobile-nav-breakpoint-min: 1024px;
-$mobile-nav-breakpoint-max: $mobile-nav-breakpoint-min - 1;
-
-/**
-*  $GRID SYSTEM
-*/
-
-$flexboxgrid: false; // https://github.com/kristoferjoseph/flexboxgrid
-
-
-/**
-*  $BOOTSTRAP GRID SYSTEM CONFIG
-*/
-
-// Number of columns in the grid.
-$grid-columns:              12;
-
-// Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         30px;
-
-// Navbar collapse (point at which the navbar becomes uncollapsed.)
-$grid-float-breakpoint:     $screen-sm-min;
-
-//** Point at which the navbar begins collapsing.
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
-
-
-/**
-*  $CONTAINER SIZES
-*/
-
-//## Define the maximum width of `.container` for different screen sizes.
-
-// Small screen / tablet
-$container-tablet:             auto; // (720px + $grid-gutter-width);
-//** For `$screen-sm-min` and up.
-$container-sm:                 auto; // $container-tablet;
-
-// Medium screen / desktop
-$container-desktop:            auto; // (940px + $grid-gutter-width);
-//** For `$screen-md-min` and up.
-$container-md:                 auto; // $container-desktop;
-
-// Large screen / wide desktop
-$container-large-desktop:      (1200px + $grid-gutter-width);
-//** For `$screen-lg-min` and up.
-$container-lg:                 $container-large-desktop;
+// Tags
+$tag-text-color:        $text-body;
+$tag-bg-color:          $brand-light;
+$tag-bullet:            $body-bg;

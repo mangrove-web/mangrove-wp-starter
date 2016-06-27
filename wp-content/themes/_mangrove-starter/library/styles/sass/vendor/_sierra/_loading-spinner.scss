@@ -1,6 +1,17 @@
 /**
-* Loader spinner
-*/
+ *  LOADING SPINNER
+ *
+ *  Markdown:
+ *  ---------
+ *  <div class='loading-spinner'>
+ *    <span></span>
+ *    <span></span>
+ *    <span></span>
+ *    <span></span>
+ *  </div>
+ *
+ */
+
 .loading-spinner {
   animation: rotateLoader 4s infinite;
   animation-timing-function: ease-in-out;
@@ -16,7 +27,7 @@
 
   span {
     animation-timing-function: ease-in-out;
-    background-color: $white;
+    background-color: $loading-spinner-bg;
     border-radius: 100%;
     display: block;
     height: 9px;
@@ -47,6 +58,15 @@
       bottom: 0;
       left: 0;
     }
+  }
+
+  &.is-relative {
+    display: inline-block;
+    left: auto;
+    margin: 0;
+    position: relative;
+    top: auto;
+    z-index: 1;
   }
 }
 
