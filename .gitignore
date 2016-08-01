@@ -11,6 +11,7 @@
 /wp-content/themes/*
 !/wp-content/themes/_mangrove-wp-bootstrap-master-3.0
 !/wp-content/themes/_mangrove-starter
+!/wp-content/themes/_*
 !/wp-content/plugins
 /wp-content/plugins/*
 !/wp-content/plugins/mangrove*
