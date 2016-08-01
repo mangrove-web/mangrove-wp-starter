@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Advanced Custom Fields Pro
-Plugin URI: http://www.advancedcustomfields.com/
+Plugin Name: Advanced Custom Fields PRO
+Plugin URI: https://www.advancedcustomfields.com/
 Description: Customise WordPress with powerful, professional and intuitive fields
-Version: 5.3.4
-Author: elliot condon
+Version: 5.3.9.2
+Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
 Text Domain: acf
@@ -17,9 +17,6 @@ if( ! class_exists('acf') ) :
 
 class acf {
 	
-	// vars
-	var $settings;
-		
 	
 	/*
 	*  __construct
@@ -61,7 +58,7 @@ class acf {
 			
 			// basic
 			'name'				=> __('Advanced Custom Fields', 'acf'),
-			'version'			=> '5.3.4',
+			'version'			=> '5.3.9.2',
 						
 			// urls
 			'basename'			=> plugin_basename( __FILE__ ),
@@ -82,9 +79,7 @@ class acf {
 			'uploader'			=> 'wp',
 			'autoload'			=> false,
 			'l10n'				=> true,
-			'l10n_textdomain'	=> '',
-			'l10n_field'		=> array('label', 'instructions'),
-			'l10n_field_group'	=> array('title'),
+			'l10n_textdomain'	=> ''
 		);
 		
 		
@@ -103,13 +98,16 @@ class acf {
 		acf_include('core/ajax.php');
 		acf_include('core/field.php');
 		acf_include('core/input.php');
+		acf_include('core/validation.php');
 		acf_include('core/json.php');
 		acf_include('core/local.php');
 		acf_include('core/location.php');
+		acf_include('core/loop.php');
 		acf_include('core/media.php');
 		acf_include('core/revisions.php');
 		acf_include('core/compatibility.php');
 		acf_include('core/third_party.php');
+		acf_include('core/updates.php');
 		
 		
 		// forms
@@ -128,6 +126,7 @@ class acf {
 			acf_include('admin/field-group.php');
 			acf_include('admin/field-groups.php');
 			acf_include('admin/update.php');
+			acf_include('admin/update-network.php');
 			acf_include('admin/settings-tools.php');
 			//acf_include('admin/settings-addons.php');
 			acf_include('admin/settings-info.php');
@@ -222,6 +221,8 @@ class acf {
 		acf_include('fields/user.php');
 		acf_include('fields/google-map.php');
 		acf_include('fields/date_picker.php');
+		acf_include('fields/date_time_picker.php');
+		acf_include('fields/time_picker.php');
 		acf_include('fields/color_picker.php');
 		acf_include('fields/message.php');
 		acf_include('fields/tab.php');
@@ -371,7 +372,6 @@ class acf {
 		
 		// vars
 		$version = acf_get_setting('version');
-		$lang = get_locale();
 		$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		
 		

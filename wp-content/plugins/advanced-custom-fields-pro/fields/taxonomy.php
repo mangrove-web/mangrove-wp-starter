@@ -48,10 +48,15 @@ class acf_field_taxonomy extends acf_field {
 		);
 		
 		
-		// extra
+		// ajax
 		add_action('wp_ajax_acf/fields/taxonomy/query',			array($this, 'ajax_query'));
 		add_action('wp_ajax_nopriv_acf/fields/taxonomy/query',	array($this, 'ajax_query'));
 		add_action('wp_ajax_acf/fields/taxonomy/add_term',		array($this, 'ajax_add_term'));
+		
+		
+		// custom set_terms
+		$this->save_post_terms = array();
+		add_action('acf/save_post', array($this, 'save_post'), 15, 1);
 		
 		
 		// do not delete!
@@ -195,11 +200,7 @@ class acf_field_taxonomy extends acf_field {
 	function ajax_query() {
 		
 		// validate
-		if( !acf_verify_ajax() ) {
-		
-			die();
-			
-		}
+		if( !acf_verify_ajax() ) die();
 		
 		
 		// get choices
@@ -207,11 +208,7 @@ class acf_field_taxonomy extends acf_field {
 		
 		
 		// validate
-		if( !$choices ) {
-			
-			die();
-			
-		}
+		if( !$choices ) die();
 		
 		
 		// return JSON
@@ -239,20 +236,7 @@ class acf_field_taxonomy extends acf_field {
 	function get_term_title( $term, $field, $post_id = 0 ) {
 		
 		// get post_id
-		if( !$post_id ) {
-			
-			$form_data = acf_get_setting('form_data');
-			
-			if( !empty($form_data['post_id']) ) {
-				
-				$post_id = $form_data['post_id'];
-				
-			} else {
-				
-				$post_id = get_the_ID();
-				
-			}
-		}
+		if( !$post_id ) $post_id = acf_get_form_data('post_id');
 		
 		
 		// vars
@@ -376,8 +360,16 @@ class acf_field_taxonomy extends acf_field {
 			}
 			
 			
-			// return
-			return $term_ids;
+			// update value
+			$value = $term_ids;
+						
+		}
+		
+		
+		// convert back from array if neccessary
+		if( $field['field_type'] == 'select' || $field['field_type'] == 'radio' ) {
+			
+			$value = array_shift($value);
 			
 		}
 		
@@ -429,7 +421,7 @@ class acf_field_taxonomy extends acf_field {
 			$term_ids = array_map('intval', $term_ids);
 			
 			
-			// bypass $this->set_terms if called directly from update_field
+			// if called directly from frontend update_field()
 			if( !did_action('acf/save_post') ) {
 				
 				wp_set_object_terms( $post_id, $term_ids, $taxonomy, false );
@@ -439,27 +431,12 @@ class acf_field_taxonomy extends acf_field {
 			}
 			
 			
-			// initialize
-			if( empty($this->set_terms) ) {
-				
-				// create holder
-				$this->set_terms = array();
-				
-				
-				// add action
-				add_action('acf/save_post', array($this, 'set_terms'), 15, 1);
-				
-			}
+			// get existing term id's (from a previously saved field)
+			$old_term_ids = isset($this->save_post_terms[ $taxonomy ]) ? $this->save_post_terms[ $taxonomy ] : array();
 			
 			
 			// append
-			if( empty($this->set_terms[ $taxonomy ]) ) {
-				
-				$this->set_terms[ $taxonomy ] = array();
-				
-			}
-			
-			$this->set_terms[ $taxonomy ] = array_merge($this->set_terms[ $taxonomy ], $term_ids);
+			$this->save_post_terms[ $taxonomy ] = array_merge($old_term_ids, $term_ids);
 			
 		}
 		
@@ -471,38 +448,36 @@ class acf_field_taxonomy extends acf_field {
 	
 	
 	/*
-	*  set_terms
+	*  save_post
 	*
-	*  description
+	*  This function will save any terms in the save_post_terms array
 	*
 	*  @type	function
 	*  @date	26/11/2014
 	*  @since	5.0.9
 	*
 	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @return	n/a
 	*/
 	
-	function set_terms( $post_id ) {
+	function save_post( $post_id ) {
 		
 		// bail ealry if no terms
-		if( empty($this->set_terms) ) {
-			
-			return;
-			
-		}
+		if( empty($this->save_post_terms) ) return;
+		
 		
 		
 		// loop over terms
-		foreach( $this->set_terms as $taxonomy => $term_ids ){
+		foreach( $this->save_post_terms as $taxonomy => $term_ids ){
 			
 			wp_set_object_terms( $post_id, $term_ids, $taxonomy, false );
+			
 			
 		}
 		
 		
 		// reset array ( WP saves twice )
-		$this->set_terms = array();
+		$this->save_post_terms = array();
 		
 	}
 	
@@ -526,19 +501,11 @@ class acf_field_taxonomy extends acf_field {
 	function format_value( $value, $post_id, $field ) {
 		
 		// bail early if no value
-		if( empty($value) ) {
-			
-			return $value;
-		
-		}
+		if( empty($value) ) return false;
 		
 		
 		// force value to array
 		$value = acf_get_array( $value );
-		
-		
-		// convert values to int
-		$value = array_map('intval', $value);
 		
 		
 		// load posts if needed
@@ -560,6 +527,7 @@ class acf_field_taxonomy extends acf_field {
 
 		// return
 		return $value;
+		
 	}
 	
 	
@@ -579,10 +547,6 @@ class acf_field_taxonomy extends acf_field {
 		
 		// force value to array
 		$field['value'] = acf_get_array( $field['value'] );
-		
-		
-		// convert values to int
-		$field['value'] = array_map('intval', $field['value']);
 		
 		
 		// vars
@@ -987,7 +951,7 @@ class acf_field_taxonomy extends acf_field {
 		?><form method="post"><?php
 		
 		acf_render_field_wrap(array(
-			'label'			=> 'Name',
+			'label'			=> __('Name', 'acf'),
 			'name'			=> 'term_name',
 			'type'			=> 'text'
 		));
@@ -1009,7 +973,7 @@ class acf_field_taxonomy extends acf_field {
 			}
 			
 			acf_render_field_wrap(array(
-				'label'			=> 'Parent',
+				'label'			=> __('Parent', 'acf'),
 				'name'			=> 'term_parent',
 				'type'			=> 'select',
 				'allow_null'	=> 1,
