@@ -25,8 +25,12 @@ gulp.task('styles', function() {
 		.pipe( plumber( { errorHandler: onError } ) )
 		.pipe( sourcemaps.init()                    )
 		.pipe( sass()                               )
-		.pipe( autoprefix()                         )
-		.pipe( cssnano()                            )
+		.pipe( autoprefix({
+			browsers: ['last 3 versions'], remove: false
+		} ) )
+		.pipe( cssnano({
+			autoprefixer: false
+		} ) )
 		.pipe( sourcemaps.write( '../maps/' )       )
 		.pipe( gulp.dest('library/styles/css')      )
 		.pipe( notify({

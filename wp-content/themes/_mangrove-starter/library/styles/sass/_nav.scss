@@ -109,7 +109,7 @@ $z-mobile-nav-toggle: 1000;
         white-space: nowrap;
 
         &:hover {
-          color: @focc-red;
+          color: darken($brand-primary, 10%);
           text-decoration: none;
         }
       }
