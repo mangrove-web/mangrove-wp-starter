@@ -63,7 +63,7 @@ $z-mobile-nav-toggle: 1000;
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	> a {
+	a {
 		color: $brand-primary;
 		transition: $transition;
 		padding: .5em 1em;
@@ -109,7 +109,7 @@ $z-mobile-nav-toggle: 1000;
         white-space: nowrap;
 
         &:hover {
-          color: @focc-red;
+          color: $brand-primary;
           text-decoration: none;
         }
       }

@@ -211,10 +211,10 @@
   order: 1;
 }
 
-@media only screen and (min-width: 48em) {
-  .container {
-    width: 49rem;
-  }
+@media only screen and (min-width: $screen-sm) {
+  // .container {
+  //   width: 49rem;
+  // }
 
   .col-sm,
   .col-sm-1,
@@ -401,10 +401,10 @@
   }
 }
 
-@media only screen and (min-width: 64em) {
-  .container {
-    width: 65rem;
-  }
+@media only screen and ($screen-md) {
+  // .container {
+  //   width: 65rem;
+  // }
 
   .col-md,
   .col-md-1,
@@ -591,10 +591,10 @@
   }
 }
 
-@media only screen and (min-width: 75em) {
-  .container {
-    width: 76rem;
-  }
+@media only screen and ($screen-lg) {
+  // .container {
+  //   width: 76rem;
+  // }
 
   .col-lg,
   .col-lg-1,
@@ -778,5 +778,27 @@
 
   .last-lg {
     order: 1;
+  }
+}
+
+// add bootstrap classes missing from this grid
+.col-xs-offset-0 {
+  @media (min-width: $screen-xs) {
+    margin-left: 0;
+  }
+}
+.col-sm-offset-0 {
+  @media (min-width: $screen-sm) {
+    margin-left: 0;
+  }
+}
+.col-md-offset-0 {
+  @media (min-width: $screen-md) {
+    margin-left: 0;
+  }
+}
+.col-lg-offset-0 {
+  @media (min-width: $screen-lg) {
+    margin-left: 0;
   }
 }
