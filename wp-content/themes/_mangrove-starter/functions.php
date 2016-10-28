@@ -136,6 +136,8 @@ function set_featured_image_from_gallery() {
 // }
 // add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+update_option('image_default_link_type','none'); // set default link from images to nada
+
 function theme_supports(){
 	// add_theme_support( 'custom-background' );
 	// add_theme_support('automatic-feed-links'); // rss thingy
